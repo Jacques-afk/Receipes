@@ -1,19 +1,32 @@
 
+$(document).ready(function (){
+    const APIKEY = "";              
+    getContacts();
+    $("#update-contact-container").hide();
+    $("#add-update-msg").hide();
 
-$('#login_Btn').click(function(e){
-    e.preventDefault();
-    //console.log("hello")
-    let login_Username = $("#login_Username").val();
-    let login_Password = $('login_Password').val();
+    $('#login_Btn').click(function(e){
+        e.preventDefault();
+        //console.log("hello")
+        let login_Username = $("#login_Username").val();
+        let login_Password = $('login_Password').val();
 
-    // uses this to create key value send the storage
+        // uses this to create key value send the storage
 
-    let particulars = {
-        "name": login_Username;
-        "password":login_Password;        
-    }
+        let particulars = {
+            "name": login_Username,
+            "password":login_Password,       
+        }
+
+        let settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "",
+
+         
+
+        }
 
 
-
-
-})
+    })
+}
