@@ -43,8 +43,21 @@ $(document).ready(function (){
         }
       }
       
-      $.ajax(settings).done(function (response) {
-        console.log(response);
+      $.ajax(settings).done(function (response) {   //response = data received from server of contacts
+
+        for (let i = 0; i < response.length; i++){
+          let check_user = response[i].Username
+          let check_pass = response[i].Password
+
+          if (check_user == login_Username){
+            console.log("user identified")
+            if (check_pass == login_Password){
+              console.log("Correct password :)")
+            }
+          }
+
+        }
+        
       });
 
 
