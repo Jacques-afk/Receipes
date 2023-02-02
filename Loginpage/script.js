@@ -13,25 +13,8 @@ $(document).ready(function (){
             "Password":login_Password,       
         };
 
-        /*let settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://tutorial-9477.restdb.io/rest/receipesprofiles",
-        "method": "POST",
-        "headers": {
-          "content-type": "application/json",
-          "x-apikey": APIKEY,
-          "cache-control": "no-cache"
-        },
-        "processData": false,
-        "data": JSON.stringify(particulars)
-      }
 
-      $.ajax(settings).done(function (response) {
-        console.log(response);
-      });*/
-
-      let settings = {                                  //getting info
+      let settings = {                                 
         "async": true,
         "crossDomain": true,
         "url": "https://tutorial-9477.restdb.io/rest/receipesprofiles",
