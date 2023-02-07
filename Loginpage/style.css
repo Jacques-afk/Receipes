@@ -118,3 +118,12 @@ button{
   color: rgb(255, 255, 255);
 }
 
+@media screen and (max-width: 768px){
+  .login-container{
+    width: 40%;
+    padding: 30px 150px 40px;
+  }
+  .login-container h1{
+    font-size: 15px;
+  }
+}
