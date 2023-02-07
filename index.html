@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+
+    img{
+        color:black;
+        width: 100%;        
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .fadeScreen{
+        width: 100%;        
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        background-color: black;
+    }
+
+    /* Fading animation */
+    .fade {
+    animation-name: fade;
+    }
+
+    @keyframes fade {
+    from {opacity: .1} 
+    to {opacity: 1}
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+    }
+</style>
+
+</head>
+<body>
+
+    
+        <div class="mySlides fade">
+            <img src="/1wd1wd1w.jpg">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="/trt.png">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="/bgh.jpg">
+        </div>
+    
+
+    
+       
+
+
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html> 
