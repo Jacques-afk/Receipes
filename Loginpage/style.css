@@ -47,8 +47,8 @@ body{
 
 
 .login-container{
+
   border-radius: 20%;
-  width: 90%;
   max-width: 200px;
   max-height: 500px;
   background-color: rgba(131, 108, 108, 0.5);
@@ -66,16 +66,13 @@ body{
 ::placeholder{
   color: rgb(255, 255, 255);
 }
+
 input{
-  height: 20px;
-  width: 100%;
+  height: 55px;
+  width: 200px;
   background-color: rgb(138, 123, 123);
   border: 0;
-  outline: 0;
-  padding: 18px;
   border-radius: 10px;
-  display: inline;
-  margin: auto;
   opacity: 1;
 }
 
@@ -90,13 +87,11 @@ input{
 
 }
 .pass{
-  padding-top: 50px;
   opacity: 1;
 
 }
 
 .userpass{
-  padding-right: 35px;
   opacity: 1;
 }
 
