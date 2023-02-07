@@ -33,13 +33,16 @@ body{
 }
 
 .login_details{
+
+  height: 100vh;
+
+
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   
 }
-
-
 
 
 
@@ -49,7 +52,7 @@ body{
   max-width: 200px;
   max-height: 500px;
   background-color: rgba(131, 108, 108, 0.5);
-  padding: 50px 200px 70px;
+  padding: 30px 150px 50px;
   text-align: center;
 }
 
@@ -125,9 +128,6 @@ button{
   color: rgb(255, 255, 255);
 }
 
-.backgroundlimage{
-  display: flex;
-}
 
 @media screen and (max-width: 768px){
   .login-container{
