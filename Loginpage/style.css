@@ -18,10 +18,7 @@ body{
   min-width: 200px;
   height: 200px;
   border-radius: 50%;
-  position: absolute;
-  top: 50px;
-  left: calc(50% - 100px);
-  z-index: 1;
+  
 }
 .insidele{
   position: relative;
@@ -30,19 +27,27 @@ body{
 
 .title{
   font-family: 'Roboto', sans-serif;
+  color: white;
   font-size: 80px;
   top: -150px;
 }
+
+.login_details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+
+
 
 .login-container{
   border-radius: 20%;
   width: 90%;
   max-width: 200px;
   max-height: 500px;
-  position: absolute;
-  top: 67%;
-  left: 50%;
-  transform: translate(-50%,-50%);
   background-color: rgba(131, 108, 108, 0.5);
   padding: 50px 200px 70px;
   text-align: center;
@@ -118,6 +123,10 @@ button{
   font-size: 18px;
   opacity: 1;
   color: rgb(255, 255, 255);
+}
+
+.backgroundlimage{
+  display: flex;
 }
 
 @media screen and (max-width: 768px){
