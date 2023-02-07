@@ -87,14 +87,29 @@ header {
     text-align: center;
     }
 
-.menu {
-    display: flex;
-    gap: 1em;
-     font-size: 18px;
- }
-
  .services {
     position: relative; 
    }
-  
-      
+
+.container {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    flex-wrap: wrap;
+  }
+
+.flex-item {
+    padding: 2%;
+    flex-grow: 1;
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-img img {
+    max-width: 100%;
+}
+
+.flex-info {
+    margin-top: auto;
+}
