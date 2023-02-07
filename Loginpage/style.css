@@ -33,27 +33,29 @@ body{
 }
 
 .login_details{
-
-  height: 100vh;
-
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  height: 100vh;    /*to make the flexbox fill the height */
+  flex-wrap:wrap;
   
 }
 
 
 
 .login-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-basis: 45%;
 
-  border-radius: 20%;
-  max-width: 200px;
-  max-height: 500px;
-  background-color: rgba(131, 108, 108, 0.5);
-  padding: 30px 150px 50px;
+
+  border-radius: 10%;
+  background-color: rgba(167, 154, 154, 0.8);
   text-align: center;
+  width: 400px;
 }
 
 .login-container h1{
@@ -91,8 +93,8 @@ input{
 
 }
 
-.userpass{
-  opacity: 1;
+.userpass h1{
+  font-size: 40px;
 }
 
 .forgot{
@@ -101,6 +103,10 @@ input{
   display: inline;
 }
 .createpass{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
   font-size: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -124,12 +130,8 @@ button{
 }
 
 
-@media screen and (max-width: 768px){
-  .login-container{
-    width: 40%;
-    padding: 30px 150px 40px;
+@media screen and (max-width: 754px){
+  .login_details{
+    width:fit-content;
   }
-  .login-container h1{
-    font-size: 15px;
-  }
-}
+} 
