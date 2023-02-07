@@ -81,3 +81,20 @@ header {
     background-color: #000000;
     color: aliceblue;
     }
+
+.wewant{
+    font-size: 60px;
+    text-align: center;
+    }
+
+.menu {
+    display: flex;
+    gap: 1em;
+     font-size: 18px;
+ }
+
+ .services {
+    position: relative; 
+   }
+  
+      
