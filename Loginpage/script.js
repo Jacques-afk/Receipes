@@ -38,7 +38,9 @@ $(document).ready(function (){
               console.log("Correct password :)")
             }
           }
-
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+          });
         }
         
       });
@@ -47,3 +49,5 @@ $(document).ready(function (){
       }) //end button function
   })// end api function
         
+
+
