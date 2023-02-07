@@ -40,3 +40,10 @@ header {
     margin-right: auto;
   }
 
+.nav-links a {
+    color: #140101;
+  }
+
+.title {
+    font-size: 32px;
+}
