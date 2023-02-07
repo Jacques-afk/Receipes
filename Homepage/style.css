@@ -59,3 +59,11 @@ header {
     justify-content: flex-end;
     padding-right: 300px;
   }
+
+.wrapper{
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 600px;
+    height: 500px;
+    padding: 30px 30px 30px;
+  }
