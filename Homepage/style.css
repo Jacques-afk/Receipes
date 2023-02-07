@@ -7,3 +7,30 @@
 a{
     text-decoration: none;
 }
+
+li{
+    list-style: none;
+  }
+
+.toptext{
+    color: aliceblue;
+    padding: 20px;
+    background-color: black;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 30px 10%;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    text-align: center;
+  }
+
+.title{
+    margin-right: auto;
+  }
+  
+
