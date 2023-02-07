@@ -47,3 +47,15 @@ header {
 .title {
     font-size: 32px;
 }
+
+.info{
+    height: 700px;
+    background-image: url(images/salmon.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 300px;
+  }
