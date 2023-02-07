@@ -29,6 +29,8 @@ body{
 }
 
 .name{
+  font-family: 'Roboto', sans-serif;
+  font-size: px;
   top: -150px;
 }
 
