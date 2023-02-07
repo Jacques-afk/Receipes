@@ -32,5 +32,11 @@ header {
 .title{
     margin-right: auto;
   }
-  
+
+.nav-links li{
+    text-align: center;
+    display: inline-block;
+    padding: 40px;
+    margin-right: auto;
+  }
 
