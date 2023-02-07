@@ -73,4 +73,11 @@ header {
     text-align: center;
     padding-top: 40px;
     opacity: 1;
-  }
+    }
+
+.categories{
+    text-align: center;
+    padding: 40px;
+    background-color: #000000;
+    color: aliceblue;
+    }
