@@ -15,21 +15,15 @@ body{
 }
 
 .logoo{
-  min-width: 200px;
-  height: 200px;
+  height: 20vh;
   border-radius: 50%;
   
-}
-.insidele{
-  position: relative;
-  bottom: 50px;
 }
 
 .title{
   font-family: 'Roboto', sans-serif;
   color: white;
-  font-size: 80px;
-  top: -150px;
+  font-size: 60px;
 }
 
 .login_details{
@@ -38,29 +32,33 @@ body{
   justify-content: center;
   align-items: center;
 
-  height: 100vh;    /*to make the flexbox fill the height */
   flex-wrap:wrap;
+  height: 100vh;
   
 }
 
+.form{
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+
+  justify-content: space-evenly;
+}
 
 
 .login-container{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  flex-basis: 45%;
-
 
   border-radius: 10%;
   background-color: rgba(167, 154, 154, 0.8);
   text-align: center;
-  width: 400px;
+  width: 300px;
 }
 
 .login-container h1{
   font-size: 30px;
-  margin-bottom: 30px;
   color: rgb(255, 255, 255);
   position: relative;
   opacity: 1;
@@ -70,12 +68,11 @@ body{
 }
 
 input{
-  height: 55px;
+  height: 45px;
   width: 200px;
-  background-color: rgb(138, 123, 123);
+  background-color: rgb(226, 219, 219);
   border: 0;
   border-radius: 10px;
-  opacity: 1;
 }
 
 .submitbutton{
@@ -83,39 +80,28 @@ input{
   padding-bottom: 40px;
   opacity: 1;
 }
-.user{
-  padding-bottom: 0px;
-  opacity: 1;
-
-}
-.pass{
-  opacity: 1;
-
-}
 
 .userpass h1{
   font-size: 40px;
 }
 
-.forgot{
-  opacity: 1;
-  background-color: rgb(138, 123, 123);
-  display: inline;
-}
 .createpass{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
   font-size: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.create{
-  opacity: 1;
 
-  background-color: rgb(138, 123, 123);
-  display: inline;
+.createpass a{
+  text-decoration: none;
+  color: white;
+  font-family: 'Marck Script', cursive;
+  font-size: 15px;
 }
+
+
 button{
   padding: 10px 20px;
   width: 175px; 
@@ -130,8 +116,6 @@ button{
 }
 
 
-@media screen and (max-width: 754px){
-  .login_details{
-    width:fit-content;
-  }
-} 
+/* @media screen and (max-width: 754px){
+  
+}  */
