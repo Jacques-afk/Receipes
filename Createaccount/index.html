@@ -5,48 +5,88 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
 </head>
 
 <body>
 	<video class="video-bg" autoplay loop muted src="images/loginpagebacks.mp4"></video>
-	<div class="background-image">
-	<img src="images/Logohope.jpg" class="logoo">
-		<div class="login-container">
-			<h1 class="name">Receipes</h1>
-			<div class="insidele">
-  				<h1>Create Account</h1>	
-  		  			<form>
-						<div class="userpass">
-							<div class="user">
-    							<input id= "create_User" type="text" placeholder="Username" required>
-							</div>
-                            <div class="email">
-    							<input id= "create_Email" type="email" placeholder="Email" required>
-							</div>
-							<div class="pass">
-    							<input id= "create_Pass" type="password" placeholder="Password" required>
-							</div>
-							<div class="confirmpass">
-    							<input id= "create_PassCfm" type="password" placeholder="Confirm Password" required>
+
+	<div class="board">
+		<div class="login_details"> <!-- container to justify content and spread them evenly later-->
+
+			<img src="/Login_Logo.png" class="logoo"> <!-- 1st element in container -->
+
+			<h1 class="title">RECIPES</h1> <!-- 2nd element in container -->
+
+				<div class="login-container"> <!-- 3rd element in container -->
+											
+							<form class="form">
+								
+
+								<h1 class="name_username">Username</h1>
+
+								<div class="user">
+									<input id="create_Username" type="text" placeholder="Username" required>
+								</div>
+
+								<h1 class ='name_email'>Email</h1>
+
+								<div class="email">
+									<input id="create_Email" type="email" placeholder="Email" required>
+								</div>
+
+								<h1 class="name_password">Password</h1>
+
+								<div class="pass">
+									<input id="create_Password" type="password" placeholder="Password" required>
+								</div>
+
+								<h1 class="name_passwordCfm">Confirm Password</h1>
+
+								<div class="pass">
+									<input id="lcreate_PasswordCfm" type="password" placeholder="Password" required>
+								</div>
+
+
+								<a href="/Receipes/Homepage/index.html">
+									<img src="/Group 127.png" id="login_Btn">
+								</a>
+								
+							</form>
+
+
+
+							
+						<div class="createpass">
+
+							<div class="forgot">
+								<a href="#">Forgot Password?</a><br>
+							</div>	
+
+							<p>/</p>
+
+							<div class="create">
+								<a href="../Createaccount/index.html">Create Account</a>
 							</div>
 						</div>
-						<div class="submitbutton">
-    						<button id= "btn_Submit" type="submit">Submit</button>
-						</div>
-					</form>
-				<div class="createpass">
-					<div class="forgot">
-						<a href="#">Forgot Password?</a><br>
-					</div>	
-					<div class="loginnow">
-						<a href="../Loginpage/index.html">Login</a>
-					</div>
+
+
+					
 				</div>
-    		</div>
+
+			</div>
 		</div>
 	</div>
 
-    <script src="/Receipes/jquery-3.6.3.js"></script>
+
+
+	<script src="/Receipes/jquery-3.6.3.js"></script>
 	<script src="script.js"></script>
 
 </body>
+</html>
