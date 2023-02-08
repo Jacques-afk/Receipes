@@ -15,9 +15,7 @@ body{
 }
 
 .logoo{
-  height: 20vh;
-  border-radius: 50%;
-  
+  height: 20vh;  
 }
 
 .title{
@@ -35,14 +33,6 @@ body{
   flex-wrap:wrap;
   height: 100vh;
   
-}
-
-.form{
-  display:flex;
-  flex-direction: column;
-  text-align: center;
-
-  justify-content: space-evenly;
 }
 
 
@@ -75,12 +65,6 @@ input{
   border-radius: 10px;
 }
 
-.submitbutton{
-  padding-top: 30px;
-  padding-bottom: 40px;
-  opacity: 1;
-}
-
 .userpass h1{
   font-size: 40px;
 }
@@ -89,8 +73,10 @@ input{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
+  color:rgb(255, 255, 255);
 
-  font-size: 20px;
+  font-size: 15px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -98,21 +84,13 @@ input{
   text-decoration: none;
   color: white;
   font-family: 'Marck Script', cursive;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 
-button{
-  padding: 10px 20px;
-  width: 175px; 
-  background-color: rgb(138, 123, 123);
-  color: white;
-  border: none;
-  border-radius: 10px; 
-  cursor: pointer;
-  font-size: 18px;
-  opacity: 1;
-  color: rgb(255, 255, 255);
+#login_Btn{
+  height: 9vh;
+  padding: 7%;
 }
 
 
