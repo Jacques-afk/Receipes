@@ -6,15 +6,16 @@ $(document).ready(function (){
         e.preventDefault();
         //console.log("hello")
 
-        let create_Username = $("#create_User").val();
-        let create_Email = $("#create_Email").val();
-        let create_Password = $('#create_Pass').val();
-        let create_ConfirmPassword = $('#create_PassCfm').val();
+        let create_Username = $(".create_User").val();
+        let create_Email = $(".create_Email").val();
+        let create_Password = $('.create_Pass').val();
+        let create_ConfirmPassword = $('.create_PassCfm').val();
 
         let particulars = {
             "Username": create_Username,
             "Password":create_Password,
             "Email": create_Email,
+            "Points": 0
         };
 
 
