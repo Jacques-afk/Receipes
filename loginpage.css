@@ -1,0 +1,99 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.video-bg{
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: fill;
+}
+
+.logoo{
+  height: 20vh;  
+}
+
+.title{
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: 60px;
+}
+
+.login_details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap:wrap;
+  height: 100vh;
+  
+}
+
+
+.login-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  border-radius: 10%;
+  background-color: rgba(167, 154, 154, 0.8);
+  text-align: center;
+  width: 300px;
+}
+
+.login-container h1{
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  position: relative;
+  opacity: 1;
+}
+::placeholder{
+  color: rgb(255, 255, 255);
+}
+
+input{
+  height: 45px;
+  width: 200px;
+  background-color: rgb(226, 219, 219);
+  border: 0;
+  border-radius: 10px;
+}
+
+.userpass h1{
+  font-size: 40px;
+}
+
+.createpass{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  color:rgb(255, 255, 255);
+
+  font-size: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.createpass a{
+  text-decoration: none;
+  color: white;
+  font-family: 'Marck Script', cursive;
+  font-size: 20px;
+}
+
+
+#login_Btn{
+  height: 9vh;
+  padding: 7%;
+}
+
+
+/* @media screen and (max-width: 754px){
+  
+}  */
