@@ -24,17 +24,20 @@ $(document).ready(function (){
         }
       }
       
+      
       $.ajax(settings).done(function (response) {   //response = data received from server of contacts
 
         for (let i = 0; i < response.length; i++){
           let check_user = response[i].Username
           let check_pass = response[i].Password
-          var user_point = response[i].Points
+   
+
 
           if (check_user == login_Username){
             console.log("user identified")
-            if (check_pass == login_Password){
-              console.log("Correct password :)")
+            if (check_pass == login_Password){     
+              localStorage.setItem('Username', login_Username)
+              localStorage.setItem('Password', login_Password)
               window.location.href = "homepage.html" 
             }
               else{
@@ -49,51 +52,46 @@ $(document).ready(function (){
       })                  
     }); //end of java for log in page
 
-      $('#create_Btn').click(function(e){      //java for create acc page
-        e.preventDefault();
-        //console.log("hello")
+    $('#create_Btn').click(function(e){      //java for create acc page
+       e.preventDefault();
+       //console.log("hello")
 
-        let create_Username = $(".create_User").val();
-        let create_Email = $(".create_Email").val();
-        let create_Password = $('.create_Pass').val();
-        let create_ConfirmPassword = $('.create_PassCfm').val();
+      let create_Username = $(".create_User").val();
+      let create_Email = $(".create_Email").val();
+      let create_Password = $('.create_Pass').val();
+      let create_ConfirmPassword = $('.create_PassCfm').val();
 
-        let particulars = {
-            "Username": create_Username,
-            "Password":create_Password,
-            "Email": create_Email,
-            "Points": 0
-        };
-
-
-        if (create_Password == create_ConfirmPassword){
-            console.log("passwords match <3")
-
-            let settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": "https://tutorial-9477.restdb.io/rest/receipesprofiles",
-                "method": "POST",
-                "headers": {
-                  "content-type": "application/json",
-                  "x-apikey": APIKEY,
-                  "cache-control": "no-cache"
-                },
-                "processData": false,
-                "data": JSON.stringify(particulars)
-              }
-        }
-           
-        
-    
-      $.ajax(settings).done(function (response) {
-        console.log(response);
-      });
+      let particulars = {
+          "Username": create_Username,
+          "Password":create_Password,
+          "Email": create_Email,
+          "Points": 0
+      };
 
 
+      if (create_Password == create_ConfirmPassword){
+          console.log("passwords match <3")
+
+          let settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": "https://tutorial-9477.restdb.io/rest/receipesprofiles",
+              "method": "POST",
+              "headers": {
+                "content-type": "application/json",
+                "x-apikey": APIKEY,
+                "cache-control": "no-cache"
+              },
+              "processData": false,
+              "data": JSON.stringify(particulars)
+          }
+      }
     })
 
-  })// end api function
+
+    
+
+})// end api function
         
 
 
