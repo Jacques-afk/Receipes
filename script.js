@@ -7,7 +7,6 @@ $(document).ready(function (){
         //console.log("hello")
         let login_Username = $("#login_Username").val();
         let login_Password = $('#login_Password').val();
-
         let particulars = {
             "Username": login_Username,
             "Password":login_Password,       
@@ -30,22 +29,25 @@ $(document).ready(function (){
         for (let i = 0; i < response.length; i++){
           let check_user = response[i].Username
           let check_pass = response[i].Password
+          var user_point = response[i].Points
 
           if (check_user == login_Username){
             console.log("user identified")
             if (check_pass == login_Password){
               console.log("Correct password :)")
+              window.location.href = "homepage.html" 
             }
-          }
-          $.ajax(settings).done(function (response) {
-            console.log(response);
-          });
+              else{
+                console.log("Wrong password :(")
+              }
+          } 
+            else{
+              console.log("user not indentified")
+            } 
         }
-        
-      });
 
-
-      }) //end button function for log in
+      })                  
+    }); //end of java for log in page
 
       $('#create_Btn').click(function(e){      //java for create acc page
         e.preventDefault();
@@ -67,7 +69,7 @@ $(document).ready(function (){
         if (create_Password == create_ConfirmPassword){
             console.log("passwords match <3")
 
-            var settings = {
+            let settings = {
                 "async": true,
                 "crossDomain": true,
                 "url": "https://tutorial-9477.restdb.io/rest/receipesprofiles",
@@ -90,8 +92,6 @@ $(document).ready(function (){
 
 
     })
-
-
 
   })// end api function
         
