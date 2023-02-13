@@ -75,19 +75,78 @@ $(document).ready(function (){
                 if (time == 5){
                     console.log('found a post captain')
                     let post = response[i];
-                    console.log(post)
                     
                     let NameOfDish = post.NameDish;
                     let Author = post.Author;
-                    let Category = post.Category;
-                    let Image = post.Image;
 
-                    $("<h2 class=Dish>" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1>").insertAfter("br");
-                    
+                    $("<div class=Dish><h2 class=Dish>" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1></div>").insertAfter("br.start");
+                    console.log("One dish done")
                 }
             }
           });
 
     })
+
+    var click_Check = true;
+    $('#change').click(function(e){
+
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://tutorial-9477.restdb.io/rest/recipesposts",
+            "method": "GET",
+            "headers": {
+              "content-type": "application/json",
+              "x-apikey": APIKEY,
+              "cache-control": "no-cache"
+            }
+          }
+          
+          $.ajax(settings).done(function (response) {
+            let like = response[1].Likes;
+            let objectid = response[1]._id;
+
+            if (click_Check == true){
+              var change = {
+                "Likes": (like + 1),
+              };
+              click_Check = false;
+            }
+
+              else{
+                var change = {
+                  "Likes": (like - 1),
+                };
+                click_Check = true;
+                
+              }
+
+            console.log(click_Check);
+
+            var settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": "https://tutorial-9477.restdb.io/rest/recipesposts/" + objectid,
+              "method": "PUT",
+              "headers": {
+                "content-type": "application/json",
+                "x-apikey": APIKEY,
+                "cache-control": "no-cache"
+              },
+              "processData": false,
+              "data": JSON.stringify(change)
+            }
+
+            $.ajax(settings).done(function (response) {
+              console.log(response);
+            });
+          })
+        
+    })
+
+
+
+
+
 })
 
