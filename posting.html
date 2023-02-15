@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2 class="toptext">
+        <p>All orders over $65 receive free shipping this weekend!</p>
+    </h2>
+    <div class="navcontain">
+      <nav class="navbar">
+        <h1 class="title">Receipes</h1>
+        <div class="menu" id="mobilemenu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+          <ul class="nav-links">
+                <li><a href="/" class="navinside">Homepage</a></li>
+                <li><a href="/" class="navinside">Explore</a></li>
+                <li><a href="/" class="navinside">Post</a></li>
+                <li><a href="/" class="navinside">Account</a></li>
+                <li><a href="/" class="navinside">Shop</a></li>
+          </ul>
+          <img src="images/recicred.png">
+          <p class="currency">0</p>
+        </div>
+      </nav>
+    </div>
+    
+    <div class="profilecontainer">
+      <div class="uploadimg">
+        <img src="images/salmon.jpg">
+        <input type="file" id="imguploadbtn" accept="image/*">
+        <label for="imguploadbtn">Set Photo</label>
+      </div>
+    </div>
+    
+    <div class="bigboycontainer">
+        <h2 class="dishname">Name of Dish</h1>
+        <div class="reply">
+        <input class="create_Dish" type="text" required>
+        </div>
+        
+        <div class="dropdown1">
+          <h2>GeeksforGeeks</h2>
+          <div class="select">
+              <select name="slct" id="slct">
+                  <option></option>
+                  <option value="1">5-10 Minutes</option>
+                  <option value="2">10-20 Minutes</option>
+                  <option value="3">20-40 Minutes</option>
+                  <option value="4">40-60 Minutes</option>
+              </select>
+          </div>
+        </div>
+
+        <div class="forthedesc">
+          <h2>Description of Dish</h2>
+          <textarea class="descdish" rows = "10" type="text" placeholder="Message" required></textarea>
+        </div>
+
+        <div class="ingandstep">
+          <h2>Ingredients for Dish</h2>
+          <textarea class="ingredientdish" rows = "15" type="text" required></textarea>
+
+          <h2>Steps for Dish</h2>
+          <textarea class="ingredientdish" rows = "15" type="text" required></textarea>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
