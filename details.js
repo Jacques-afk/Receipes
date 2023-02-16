@@ -134,19 +134,33 @@ $(document).ready(function (){
 
     postObject(function(post){     //updating the text on the post
 
-        let titleofpost = post.NameDish
-        let authorofpost = post.authorofpost
-        let dateofpost = post.Date_of_Post
-        let duration = post.Time
-        let descriptionofpost = post.Description
-        let numberoflikes = post.Likes
-        let numberfofdisllikes = post.Dislikes
-        let numberofcomments = post.Comments_No
+        let titleofpost = post.NameDish;
+        let authorofpost = post.authorofpost;
+        let dateofpost = post.Date_of_Post;
+        let duration = post.Time;
+        let descriptionofpost = post.Description;
+        let numberoflikes = post.Likes;
+        let numberfofdisllikes = post.Dislikes;
+        let numberofcomments = post.Comments_No;
+        let durationofDish = "";
+
+        if (duration == 5){
+            durationofDish = "5-10";
+        }
+        else if (duration == 10){
+            durationofDish = "10-20";
+        }
+        else if (duration == 20){
+            durationofDish = "20-40";
+        }
+        else if (duration == 20){
+            durationofDish = "40-60";
+        }
 
         $('.namedafood').text(titleofpost);
         $('.Posted_Author').text('Posted by: ' + authorofpost);
         $('.Posted_Date').text('Posted on: ' + dateofpost);
-        $('.Posted_Duration').text('Duration: ' + duration);
+        $('.Posted_Duration').text('Duration: ' + durationofDish + 'Minutes');
         $('.description').text(descriptionofpost);
         $('.likes').text(numberoflikes);
         $('.dislikes').text(numberfofdisllikes);
