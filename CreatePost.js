@@ -104,7 +104,7 @@ $(document).ready(function (){
             }
           });
 
-    })
+    });
 
 
 
@@ -179,48 +179,75 @@ $(document).ready(function (){
         
     // })
 
-  points = 0;
+  
+  
+  let total_points = 0;
 
+  function cal_points(callback){
 
-  var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://tutorial-9477.restdb.io/rest/recipesposts",
-    "method": "GET",
-    "headers": {
-      "content-type": "application/json",
-      "x-apikey": APIKEY,
-      "cache-control": "no-cache"
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://tutorial-9477.restdb.io/rest/recipesposts",
+      "method": "GET",
+      "headers": {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache"
+      }
     }
+  
+    $.ajax(settings).done(function (response) {
+      for (let i = 0; i < response.length; i++){
+  
+        let current_User = user;
+        post_author = response[i].Author;
+        
+        if (current_User == post_author){
+          let post_likes = response[i].Likes;
+  
+          let starter = 0;
+          let award_5 = 0;
+          let award_10 = 0;
+  
+          if (post_likes >= 2){
+            starter += 5;
+          }
+  
+          if (post_likes > 5){
+            let remain1 = post_likes % 5;
+            let final1 = post_likes - remain1;
+            let total_5 = final1 / 5 ;
+  
+            let result_5 = total_5 * 5;
+            award_5 += result_5;
+          }
+  
+          if (post_likes > 10){
+            let remain2 = post_likes % 10;
+            let final2 = post_likes - remain2;
+            let total_10 = final2 / 10;
+  
+            let result_10 = total_10 * 2;
+            award_10 += result_10;
+          }
+  
+          console.log(award_5);
+          console.log(award_10);
+
+          let final_award = award_5 + award_10 + starter;
+          callback(final_award)
+        }
+      }
+    });
   }
 
-  $.ajax(settings).done(function (response) {
-    for (let i = 0; i < response.length; i++){
+  cal_points(function(final_award){
+    total_points += final_award;
+    console.log(total_points)
 
-      let current_User = user;
-      post_author = response[i].Author;
-      
-      if (current_User == post_author){
-        let post_likes = response[i].Likes;
+  })
 
-        if (post_likes == 2){
-          points += 5;
-        }
-          elseif(post_likes == 5){
-            points += 5;
-          }
-          elseif(post_likes == 15){
-            points += 10
-          }
 
-          elseif(post_likes > 15){
-            for 
-          }
 
-          
-
-      }
-
-    } 
-  });
-});
+}); //end coding for document
