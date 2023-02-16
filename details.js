@@ -2,7 +2,7 @@
 //enters the details for the page
 
 $(document).ready(function (){
-
+    const comment_Bar = document.querySelector('.comment')
     const Username = localStorage.getItem("Username"); //current user in session
     // const postName = localStorage.getItem("Dishname");
     const postName = "Laksa" 
@@ -142,25 +142,12 @@ $(document).ready(function (){
         let numberoflikes = post.Likes;
         let numberfofdisllikes = post.Dislikes;
         let numberofcomments = post.Comments_No;
-        let durationofDish = "";
 
-        if (duration == 5){
-            durationofDish = "5-10";
-        }
-        else if (duration == 10){
-            durationofDish = "10-20";
-        }
-        else if (duration == 20){
-            durationofDish = "20-40";
-        }
-        else if (duration == 20){
-            durationofDish = "40-60";
-        }
-
+   
         $('.namedafood').text(titleofpost);
         $('.Posted_Author').text('Posted by: ' + authorofpost);
         $('.Posted_Date').text('Posted on: ' + dateofpost);
-        $('.Posted_Duration').text('Duration: ' + durationofDish + 'Minutes');
+        $('.Posted_Duration').text('Duration: ' + duration+ ' Minutes');
         $('.description').text(descriptionofpost);
         $('.likes').text(numberoflikes);
         $('.dislikes').text(numberfofdisllikes);
@@ -256,6 +243,22 @@ $(document).ready(function (){
 
         });
     });
+
+    comment_Bar.addEventListener("keypress", function(event) {
+
+        if (event.key === "Enter") {
+          event.preventDefault();
+    
+          var feedback = $('.comment').val(); //whatever the user typed
+          console.log(feedback)
+
+        }
+    })
+
+
+
+
+
 });
 
 
