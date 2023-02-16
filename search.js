@@ -1,7 +1,15 @@
 const APIKEY = '63db64973bc6b255ed0c456e';
-
-
 const search_Bar = document.querySelector('.searchhh')
+
+//section for if they press the cultural food categories//
+
+
+
+
+
+
+
+//section for if they search via the search bar//
 
 search_Bar.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
@@ -35,7 +43,7 @@ search_Bar.addEventListener("keypress", function(event) {
             let final_found = nameofpost.toUpperCase();
 
             if (final_found == final_search){
-              
+
             }
             
             
