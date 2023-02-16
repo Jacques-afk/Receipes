@@ -3,9 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="searchresults.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
-    <br>
+    <h2 class="toptext">
+        <p>All orders over $65 receive free shipping this weekend!</p>
+    </h2>
+    <div class="navcontain">
+      <nav class="navbar">
+        <h1 class="title">Receipes</h1>
+        <div class="menu" id="mobilemenu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+          <ul class="nav-links">
+                <li><a href="/" class="navinside">Homepage</a></li>
+                <li><a href="/" class="navinside">Explore</a></li>
+                <li><a href="/" class="navinside">Post</a></li>
+                <li><a href="/" class="navinside">Account</a></li>
+                <li><a href="/" class="navinside">Shop</a></li>
+          </ul>
+          <img src="images/recicred.png">
+          <p class="currency">0</p>
+        </div>
+      </nav>
+    </div>
+
+    <form class="searchthingy">
+        <input type="text" class="searchh" placeholder="Search">
+        <button class="seatch">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+    </form>
+
+    <div class="goingbackk">
+      <a href="#" class="gobacklink">Go Back?</a>
+    </div>
+
+    <div class="footer">
+      <div class="wordlol">
+        <a href="#" class="le">About Us</a>
+        <a href="#" class="lo">Discussions and Help</a>
+        <a href="#" class="lel">Account Settings</a>
+        <a href="#" class="lelo">Rules and regulations</a>
+      </div>
+    </div>
+    
+    <script src="/Receipes/jquery-3.6.3.js"></script>
+    <script src="/Receipes/postresults.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

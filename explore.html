@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="explore.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <h2 class="toptext">
@@ -35,13 +36,18 @@
     <div class="incontainer">
         <h2 class="craving">What are we craving<br> today,chef</h2>
         <h4 class="endless">The possibilities are down right endless</h4>
-        <input type="text" class="searchh" placeholder="Search">
+        <input class="searchhh" placeholder="Search">
+        <form class="searchthingy">
+          <button class="seatch">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </form>
         <h4 class="endless">Here are some suggestions</h4>
         <div class="stuffies">
-          <a href="#" class="le">Chinese</a>
-          <a href="#" class="lo">Italian</a>
-          <a href="#" class="lel">Western</a>
-          <a href="#" class="lelo">Vietnamese</a>
+          <button class="chineseman">Chinese</button>
+          <button class="italianman">Italian</button>
+          <button class="westernman">Western</button>
+          <button class="vietnamman">Vietnamese</button>
         </div>
     </div>
   </div>
@@ -54,7 +60,9 @@
       <a href="#" class="heho">Rules and regulations</a>
     </div>
   </div>
-
-  <script src="app.js"></script>
+  
+    <script src="/Receipes/jquery-3.6.3.js"></script>
+    <script src="/Receipes/search.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
