@@ -3,8 +3,10 @@
 
 const APIKEY = "63db64973bc6b255ed0c456e";                      
 let counter = 0;
+let catergory_Search = localStorage.setItem("Category", "quick")
+let category_Search = localStorage.getItem("Category")
 
-function ButtonLink(callback){
+function getquickrecipes(callback){
     console.log('create')
     var settings = {
         "async": true,
@@ -30,29 +32,42 @@ function ButtonLink(callback){
     });
 }
 
-
-ButtonLink(function(post){
-    console.log(post);
-
-    let NameOfDish = post.NameDish;
-    let Author = post.Author;
-    let photoSRC = post.Photo[0]
-    console.log(photoSRC)
-
-    $("<div class=Dish><h2 class=DishName>" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1> <img src=https://tutorial-9477.restdb.io/media/" + photoSRC + "> style=width:104px;height:142px;> <button class=Go" + counter + ">button</button></div>").insertAfter("br.start");
-    console.log("One dish done");
-    counter += 1;
-    console.log(counter);
-
-    $('button').click(function(o){
-        let classy = $(this)[0].className;
-
-        let targetted_div = ($("." + classy).parent()[0]);   
-        let targetted_dishname = targetted_div.children[0].innerText;
-        let targetted_authorname = targetted_div.children[1].innerText;
-        localStorage.setItem("Dishname", targetted_dishname);
-        window.location.href = "recipedetails.html";              
+function quickrecipes(){
+    getquickrecipes(function(post){
+        console.log(post);
+    
+        let NameOfDish = post.NameDish;
+        let Author = post.Author;
+        let photoSRC = post.Photo[0]
+        console.log(photoSRC)
+    
+        $("<div class=Dish><h2 class=DishName>" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1> <img src=https://tutorial-9477.restdb.io/media/" + photoSRC + "><button class=Go" + counter + ">button</button></div>").insertAfter("br.start");
+        console.log("One dish done");
+        counter += 1;
+        console.log(counter);
+    
+        $('button').click(function(o){
+            let classy = $(this)[0].className;
+    
+            let targetted_div = ($("." + classy).parent()[0]);   
+            let targetted_dishname = targetted_div.children[0].innerText;
+            let targetted_authorname = targetted_div.children[1].innerText;
+            localStorage.setItem("Dishname", targetted_dishname);
+            window.location.href = "recipedetails.html";              
+        })  
     })
+} 
 
-})
 
+if (category_Search == "quick"){
+    quickrecipes();
+}
+    else if (category_Search == "favourite"){
+        favouriterecipes();
+    }   
+    else if (category_Search == "fusion"){
+        fusionrecipes();
+    }
+    else if (category_Search == "latest"){
+        latestrecipes();
+    }
