@@ -42,9 +42,10 @@ function quickrecipes(){
         let NameOfDish = post.NameDish;
         let Author = post.Author;
         let photoSRC = post.Photo[0]
+        let categoryforicon = post.Category
         console.log(photoSRC)
     
-        $("<div class=Dish><h2 class=DishName>" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1> <img class=JAJABINKS src=https://tutorial-9477.restdb.io/media/" + photoSRC + "><button class=Go" + counter + ">button</button></div>").insertAfter(".gobacklink");
+        $("<div class=Dish><h2 class=DishName>" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1> <img class=JAJABINKS src=https://tutorial-9477.restdb.io/media/" + photoSRC + "><button class=Go" + counter + ">button</button> <img class=iconcategory src=/" + categoryforicon + ".png> </div>").insertAfter(".gobacklink");
         console.log("One dish done");
         counter += 1;
         console.log(counter);
@@ -386,15 +387,15 @@ function searchbar(){
             counter += 1;
             console.log(counter);
         
-            // $('button').click(function(o){
-            //     let classy = $(this)[0].className;
+            $('button').click(function(o){
+                let classy = $(this)[0].className;
         
-            //     let targetted_div = ($("." + classy).parent()[0]);   
-            //     let targetted_dishname = targetted_div.children[0].innerText;
-            //     let targetted_authorname = targetted_div.children[1].innerText;
-            //     localStorage.setItem("Dishname", targetted_dishname);
-            //     window.location.href = "recipedetails.html";              
-            // })
+                let targetted_div = ($("." + classy).parent()[0]);   
+                let targetted_dishname = targetted_div.children[0].innerText;
+                let targetted_authorname = targetted_div.children[1].innerText;
+                localStorage.setItem("Dishnamey", targetted_dishname);
+                window.location.href = "recipedetails.html";              
+            })
         })
 
 
@@ -443,5 +444,4 @@ if (category_Search == "quick"){
     }
     else if (manual_Search.length >= 1){
         searchbar();
-        localStorage.removeItem("Dishs")
     }
