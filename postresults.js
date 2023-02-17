@@ -5,7 +5,130 @@ const APIKEY = "63db64973bc6b255ed0c456e";
 let counter = 0;
 let category_Search = localStorage.getItem("Category");
 let manual_Search = localStorage.getItem("Dishs");
+const user = localStorage.getItem("Username");
 console.log(manual_Search);
+
+
+function pointsupdater(){
+    var total_points = 0;
+  
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://tutorial-9477.restdb.io/rest/recipesposts",
+      "method": "GET",
+      "headers": {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache"
+      }
+    }
+
+    $.ajax(settings).done(function (response) {   //checking which posts are by the current logged in user
+
+      for (let i = 0; i < response.length; i++){
+        let current_User = user;
+        post_author = response[i].Author;
+
+        if (current_User == post_author){
+          let post_likes = response[i].Likes;
+          let post_comments = response[i].Comments_No
+
+          let starter = 0;
+          let award_5 = 0;
+          let award_10 = 0;
+
+          if (post_likes >= 2){
+            starter += 5;
+          }
+
+          if (post_likes > 5){
+            let remain1 = post_likes % 5;
+            let final1 = post_likes - remain1;
+            let total_5 = final1 / 5 ;
+
+            let result_5 = total_5 * 5;
+            award_5 += result_5;
+          }
+
+          if (post_likes > 10){
+            let remain2 = post_likes % 10;
+            let final2 = post_likes - remain2;
+            let total_10 = final2 / 10;
+
+            let result_10 = total_10 * 2;
+            award_10 += result_10;
+          }
+
+          let tally = award_5 + award_10 + starter;
+
+
+          total_points += tally;
+        }
+      }  //outside the for loop
+    });
+    
+    console.log(total_points)
+
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://tutorial-9477.restdb.io/rest/receipesprofiles",
+      "method": "GET",
+      "headers": {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache"
+      }
+    }
+
+    $.ajax(settings).done(function (response) {
+      for (let i = 0; i < response.length; i++){
+
+        if (response[i].Username == user){
+          console.log('userfound');
+
+          let userid = response[i]._id;
+          let UsernameFOR = response[i].Username;
+          let PasswordFOR = response[i].Password;
+          let EmailFOR = response[i].Email;
+          
+          var jsondata = {"Username": UsernameFOR,
+                    "Password": PasswordFOR,
+                    "Email": EmailFOR,
+                    "Points": total_points,
+                    };
+
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://tutorial-9477.restdb.io/rest/receipesprofiles/" + userid,
+            "method": "PUT",
+            "headers": {
+              "content-type": "application/json",
+              "x-apikey": APIKEY,
+              "cache-control": "no-cache"
+            },
+            "processData": false,
+            "data": JSON.stringify(jsondata)
+          }
+
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+          });
+
+          $('.currency').text(total_points)
+
+        }
+      }
+    });
+  }
+    
+  pointsupdater();
+
+
+
+
 
 
 function getquickrecipes(callback){
@@ -26,7 +149,7 @@ function getquickrecipes(callback){
         for (let i = 0; i < response.length; i++){
 
             let time = response[i].Time;
-            if (time == 5){
+            if (time == "5-10"){
                 console.log('found a post captain');
                 let post = response[i];
                 callback(post)
@@ -79,10 +202,10 @@ function getfavouriterecipes(callback){
     $.ajax(settings).done(function (response) {
         for (let i = 0; i < response.length; i++){
             
-            let foodcategory = response[i].Category;
+            let likeyy = response[i].Likes;
+            let averagelikes = 1;                         //change this value based on average 
 
-
-            if (foodcategory == "Vietnamese"){
+            if (likeyy >= averagelikes){
                 console.log('found a post captain');
                 let post = response[i];
                 callback(post)
@@ -119,6 +242,136 @@ function favouriterecipes(){
 
 ///////////////////////////////////////////////////////////
 
+function getfusionrecipes(callback){
+    console.log('create')
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://tutorial-9477.restdb.io/rest/recipesposts",
+        "method": "GET",
+        "headers": {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache"
+        }
+    }
+    
+    $.ajax(settings).done(function (response) {
+        for (let i = 0; i < response.length; i++){
+
+            let time = response[i].Time;
+            if (time == "5-10"){
+                console.log('found a post captain');
+                let post = response[i];
+                callback(post)
+            }
+        }
+    });
+}
+
+function fusionrecipes(){
+    getfusionrecipes(function(post){
+        console.log(post);
+    
+        let NameOfDish = post.NameDish;
+        let Author = post.Author;
+        let photoSRC = post.Photo[0]
+        let categoryforicon = post.Category
+        console.log(photoSRC)
+    
+        $("<div class=Dish><h2 class=DishName>" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1> <img class=JAJABINKS src=https://tutorial-9477.restdb.io/media/" + photoSRC + "><button class=Go" + counter + ">button</button> <img class=iconcategory src=/" + categoryforicon + ".png> </div>").insertAfter(".gobacklink");
+        console.log("One dish done");
+        counter += 1;
+        console.log(counter);
+    
+        $('button').click(function(o){
+            let classy = $(this)[0].className;
+    
+            let targetted_div = ($("." + classy).parent()[0]);   
+            let targetted_dishname = targetted_div.children[0].innerText;
+            let targetted_authorname = targetted_div.children[1].innerText;
+            localStorage.setItem("Dishname", targetted_dishname);
+            window.location.href = "recipedetails.html";              
+        })  
+    })
+} 
+
+//////////////////////////////////////////////////////////////////
+
+function getlatestrecipes(callback){
+    console.log('create')
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://tutorial-9477.restdb.io/rest/recipesposts",
+        "method": "GET",
+        "headers": {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache"
+        }
+    }
+    
+    let today = new Date();
+
+    let month = today.getMonth() + 1;
+    let year = today.getFullYear();
+    let date = today.getDay() + 12;
+
+    $.ajax(settings).done(function (response) {
+        for (let i = 0; i < response.length; i++){
+
+            let dateyposty = response[i].Date_of_Post;
+            emptyi = []
+            emptyi.push = dateyposty.split("/");
+            console.log(emptyi[0])
+
+            let re_str = date - 7;
+
+            for (let i = re_str; i <= date; i++){
+
+                if (i == dateyposty){
+                    console.log('found a post captain');
+                    let post = response[i];
+                    callback(post)
+                }
+                    else{
+                        console.log('no new dates')
+                    }
+            }
+        }   
+    });
+}
+    
+
+function latestrecipes(){
+    getlatestrecipes(function(post){
+        console.log(post);
+    
+        let NameOfDish = post.NameDish;
+        let Author = post.Author;
+        let photoSRC = post.Photo[0]
+        let categoryforicon = post.Category
+        console.log(photoSRC)
+    
+        $("<div class=Dish><h2 class=DishName>" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1> <img class=JAJABINKS src=https://tutorial-9477.restdb.io/media/" + photoSRC + "><button class=Go" + counter + ">button</button> <img class=iconcategory src=/" + categoryforicon + ".png> </div>").insertAfter(".gobacklink");
+        console.log("One dish done");
+        counter += 1;
+        console.log(counter);
+    
+        $('button').click(function(o){
+            let classy = $(this)[0].className;
+    
+            let targetted_div = ($("." + classy).parent()[0]);   
+            let targetted_dishname = targetted_div.children[0].innerText;
+            let targetted_authorname = targetted_div.children[1].innerText;
+            localStorage.setItem("Dishname", targetted_dishname);
+            window.location.href = "recipedetails.html";              
+        })  
+    })
+} 
+
+/////////////////////////////////////////////////////////////////////////////
 
 function getchineserecipes(callback){
     console.log('create')
@@ -409,39 +662,39 @@ function searchbar(){
 
 
 
-
 if (category_Search == "quick"){
+    console.log('calling quick')
     quickrecipes();
-    localStorage.removeItem("Category")
 }
     else if (category_Search == "favourite"){
+        console.log('calling fav')
         favouriterecipes();
-        localStorage.removeItem("Category")
     }   
-    else if (category_Search == "fusion"){
+    else if (category_Search == "fusionnn"){
+        console.log('fus')
         fusionrecipes();
-        localStorage.removeItem("Category")
     }
-    else if (category_Search == "latest"){
+    else if (category_Search == "latestest"){
+        console.log('new')
         latestrecipes();
-        localStorage.removeItem("Category")
     }
     else if (category_Search == "chinese"){
+        console.log('chin')
         chineserecipes();
-        localStorage.removeItem("Category")
     }
     else if (category_Search == "western"){
+        console.log('wester')
         westernrecipes();
-        localStorage.removeItem("Category")
     }
     else if (category_Search == "vietnamese"){
+        console.log('viet')
         vietnameserecipes();
-        localStorage.removeItem("Category")
     }
     else if (category_Search == "italian"){
+        console.log('ital')
         italianrecipes();
-        localStorage.removeItem("Category")
     }
     else if (manual_Search.length >= 1){
+        console.log('searchbr')
         searchbar();
     }
