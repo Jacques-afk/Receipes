@@ -12,7 +12,7 @@ let month = today.getMonth() + 1;
 let year = today.getFullYear();
 let date = today.getDay() + 12;
 
-let current_date = `${date}-${month}-${year}`
+let current_date = `${date}/${month}/${year}`
 console.log(current_date);
 
 
