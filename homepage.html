@@ -4,33 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Montserrat:ital,wght@1,500&family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="homepage.css">
 </head>
 <body>
-  <h2 class="toptext">
-    <p>All orders over $65 receive free shipping this weekend!</p>
-  </h2>
-  <header>
-    <div class="title"><p>Receipes</p></div>
-    <nav class="navbar">
-        <ul class="nav-links">
-              <li><a href="/">Homepage</a></li>
-              <li><a href="/">Explore</a></li>
-              <li><a href="/">Compete</a></li>
-              <li><a href="/">Shop</a></li>
-        </ul>
-    </nav>
-    <a class="reci" href="#"></a><button>Reci</button></a>  
-  </header>
-
+    <h2 class="toptext">
+        <p>All orders over $65 receive free shipping this weekend!</p>
+    </h2>
+    <div class="navcontain">
+      <nav class="navbar">
+        <h1 class="title"><img src="images/danewlogo.png"></h1>
+        <div class="menu" id="mobilemenu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+          <ul class="nav-links">
+                <li><a href="/Receipes/homepage.html" class="navinside">Homepage</a></li>
+                <li><a href="/Receipes/explore.html" class="navinside">Explore</a></li>
+                <li><a href="/Receipes/posting.html" class="navinside">Post</a></li>
+                <li><a href="/" class="navinside">Account</a></li>
+                <li><a href="/Receipes/shop.js" class="navinside">Shop</a></li>
+          </ul>
+          <img src="images/recicred.png">
+          <p class="currency">0</p>
+        </div>
+      </nav>
+    </div>
+    
   <section class="activate">
-    <div class="info">
+    <div class="infocontainer">
+    <img class="reclogo" src="images\recipeslogo.png">
       <div class="wrapper">
-        <h2 class="wewant">We want whats best for you</h2>
+        <h2 class="wewant">We want whats best <br>for you</h2>
         <p class="forsen">By verifying your email address, we will be able 
         to update you on the latest promotional events, deals,
         discounts, new merchandise, food vouchers and more!</p>
-
+        <button class="activatebtn"><a href="#">Activate Now</a></button>
       </div>
     </div>
   </section>
@@ -39,13 +51,13 @@
     <h1>Food Categories</h1>
   </div>
 
-  <section class="container">
+  <div class="container">
 		<div class="flex-item">
       <div class="flex-info">
         <h4>5-10 minute dishes</h4>
       </div>
 			<div class="flex-img">
-				<img src="images/salmon.jpg">
+        <input type="image" src="/timelogo.png">
       </div>
 		</div>
     <div class="flex-item">
@@ -53,7 +65,7 @@
         <h4>Highly favourited dishes</h4>
       </div>
 			<div class="flex-img">
-				<img src="https://picsum.photos/400/400">
+				<input class="favouritedALOT"type="image" src="/heartlogo.png">
       </div>
 		</div>
     <div class="flex-item">
@@ -61,36 +73,45 @@
         <h4>Fusion Dishes</h4>
       </div>
 			<div class="flex-img">
-				<img src="https://picsum.photos/400/400">
+				<input type="image" src="/fusionlogo.png">
       </div>
 		</div>
     <div class="flex-item">
       <div class="flex-info">
         <h4>Newest Dishes</h4>
       </div>
-			<div class="flex-img">
-				<img src="https://picsum.photos/400/400">
+			<div class="flex-img" id="flexing">
+				<a href="#" class="latest">!</a>
       </div>
 		</div>
-  </section>
+  </div>
 
   <h1 class="reachingout">Want To <span>Reach Out</span> to Us?</h1>
   <p class="notperfect">Our website isn't perfect, and users may experience<br>errors or just 
     need a bit more help navigating the<br> website and understanding its features</p>
   </p>
-
+    
   <form>
     <div class="field">
-        <input class="fullname" type="text" placeholder="Full Name" required>
-        <br>
-        <input class="emailo" type="text" placeholder="Email" required>
-        <br>
-        <textarea class="message" type="text" placeholder="Message" required></textarea>
+        <div class="boxmox">
+          <input class="fullname" type="text" placeholder="Full Name" required>
+          <input class="emailo" type="text" placeholder="Email" required>
+        </div>
+        <textarea class="message" rows = "10" type="text" placeholder="Message" required></textarea>
         <br>
     </div>
   </form>
 
+  <div class="footer">
+    <div class="wordlol">
+      <a href="#" class="le">About Us</a>
+      <a href="#" class="lo">Discussions and Help</a>
+      <a href="#" class="lel">Account Settings</a>
+      <a href="#" class="lelo">Rules and regulations</a>
+    </div>
+  </div>
+  <script src="app.js"></script>
   <script src="/Receipes/jquery-3.6.3.js"></script>
 	<script src="homepage.js"></script>
-
 </body>
+</html>
