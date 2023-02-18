@@ -23,9 +23,9 @@
             <li><a href="/Receipes/explore.html" class="navinside">Explore</a></li>
             <li><a href="/Receipes/posting.html" class="navinside">Post</a></li>
             <li><a href="/" class="navinside">Account</a></li>
-            <li><a href="/Receipes/shop.js" class="navinside">Shop</a></li>
+            <li><a href="/Receipes/shoppage.html" class="navinside">Shop</a></li>
           </ul>
-          <img src="images/recicred.png">
+          <img src="/recicred.png">
           <p class="currency">0</p>
         </div>
       </nav>
@@ -34,7 +34,7 @@
     <div class="profilecontainer">
       <div class="uploadimg">
         <img src="images/salmon.jpg">
-        <input type="file" id="imguploadbtn" accept="image/*">
+        <input type="file" id="imguploadbtn" accept="image/*" onchange="imagepreview(event)">
         <label for="imguploadbtn">Set Photo</label>
       </div>
     </div>
@@ -61,12 +61,11 @@
         <div class="dropdown2">
           <h2>Category of Dish</h2>
           <div class="select2">
-              <select name="slect" id="slect">
-                  <option></option>
-                  <option>Italian</option>
-                  <option>Chinese</option>
-                  <option>Vietnamese</option>
-                  <option>Western</option>
+              <select name="category" id="category">
+                  <option value="Italian">Italian</option>
+                  <option value="Chinese">Chinese</option>
+                  <option value="Vietnamese">Vietnamese</option>
+                  <option value="Western">Western</option>
               </select>
           </div>
         </div>
@@ -91,6 +90,8 @@
     </div>
 
     <script src="/Receipes/jquery-3.6.3.js"></script>
+    <script src="/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="/jquery.multi-select.js"></script>
     <script src="/Receipes/CreatePost.js"></script>
     <script src="app.js"></script>
 </body>
