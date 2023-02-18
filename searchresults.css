@@ -68,9 +68,9 @@
     color: #000000;
     }
     
-  .title {
-    font-size: 32px;
-  }
+    .title img{
+      width: 100%;
+    }
   
   .menu .bar{
     display: block;
@@ -122,6 +122,67 @@ i.fa{
   margin-top: 20px;
 }
 
+.imgcon img{
+  max-width: 300px;
+  width: 100%;
+  height: 100%;
+}
+
+.iconcategory img{
+  width: 68px;
+  height: 76px;
+}
+
+img{
+  border-radius: 20%;
+}
+
+.Extra{
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 20px;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-top: 30px;
+}
+
+.Dish{
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 20px;
+}
+
+.Go{
+  margin-top: 70px;
+  min-width: 100px;
+  width: 100%;
+  height: 50px;
+  border-radius: 15px;
+  border: none;
+  font-size: 15px;
+}
+
+.Info{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.DishName{
+  font-size: 20px;
+}
+
+.Author_Dish{
+  font-size: 50px;
+}
+
+.backgroundimgyk{
+  background-image: url(/4background.jpg);
+}
+
 .footer{
   width: 100%;
   display: block;
@@ -156,7 +217,27 @@ i.fa{
   width: 20%;
 }
 
+@media screen and (min-width: 1024px){
+  .Extra{
+      justify-content: space-between;
+  }
+}
+
   @media screen and (max-width: 768px){
+
+    .Extra{
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+
+    .DishName{
+        font-size: 13px;
+    }
+  
+    .Author_Dish{
+      font-size: 10px;
+    }
+
     .navcontain{
       position: relative;
     }

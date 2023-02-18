@@ -1,8 +1,7 @@
 
 const APIKEY = "63db64973bc6b255ed0c456e";
 const user = localStorage.getItem("Username")
-
-
+const feedback = document.querySelector('.message')
 
 function pointsupdater(){
 
@@ -119,41 +118,6 @@ function pointsupdater(){
 }
   
 pointsupdater();
-
-// function getUserPoints(callback){
-//   var User_Points = 5;
-
-//   var settings = {
-//     "async": true,
-//     "crossDomain": true,
-//     "url": "https://tutorial-9477.restdb.io/rest/receipesprofiles",
-//     "method": "GET",
-//     "headers": {
-//       "content-type": "application/json",
-//       "x-apikey": APIKEY,
-//       "cache-control": "no-cache"
-//     }
-//   };
-  
-//   $.ajax(settings).done(function (response) {
-
-//     for (let i = 0; i < response.length; i++){
-//         let check_user = response[i].Username;
-   
-//           if (check_user == Username){
-//             User_Points = response[i].Points;
-//             break;        
-//           }   
-//     }
-//     callback(User_Points)
-//   });
-// }
-
-// getUserPoints(function(e){
-//   $('.currency').text(e);
-//   console.log('change applied');
-// })
-
 $('.quicky').click(function(e){    
   localStorage.setItem("Category", "quick")
   window.location.href = "searchresults.html";
@@ -173,6 +137,19 @@ $('.latest').click(function(e){
   localStorage.setItem("Category", "latestest")
   window.location.href = "searchresults.html";
 });
+
+feedback.addEventListener("keypress", function(event) {
+  
+  if (event.key === "Enter") {
+  event.preventDefault();
+
+  alert("Your message has been sent!");
+  window.location.href = "homepage.html";
+  }
+
+});
+
+
 
 
 // const menu = document.querySelector('#mobilemenu');

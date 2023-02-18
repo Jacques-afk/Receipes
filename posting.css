@@ -1,7 +1,7 @@
 *{
   margin: 0;
   padding: 0;
-  font-family: cursive;
+  font-family: 'Lato', sans-serif;
   text-decoration: none;
   box-sizing: border-box;
 }
@@ -68,9 +68,9 @@ li{
   color: #000000;
   }
   
-.title {
-  font-size: 32px;
-}
+  .title img{
+    width: 100%;
+  }
 
 .menu .bar{
   display: block;
@@ -81,84 +81,135 @@ li{
   background: #ffffff;
 }
 
-.selectmenu{
-  width: 380px;
-  margin: 150px auto;
+.photocontainer{
+  text-align: center;
+  float: right;
+  margin-right: 10%;
 }
 
-.dropdown1 h2 {
-  color: rgb(0, 0, 0);
+.photocontainer a{
+  text-decoration: underline;
+  color: #000000;
 }
 
-.forthedesc{
-width: 90%;
-border-radius: 20px;
-margin-left: 100px;
-}
-
-.descdish{
-width: 100%;
-}
-
-.ingandstep{
-display: block;
-width: 30%;
-margin-top: 20px;
-margin-left: 30px;
+.uploadimg2 img{
+  max-width: 600px;
+  width: 100%;
 }
 
 .ingredientdish{
-width: 100%;
+  width: 50%;
+  padding-left: 10px;
+  margin: 15px 0;
+  box-sizing: border-box;
+  border-radius: 30px;
+  font-size: 20px;
+  border-radius: 20px;
+  border: 3px solid black
 }
 
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  outline: 0;
-  background: rgb(255, 255, 255);
-  background-image: none;
+.stepdish{
+  width: 50%;
+  padding-left: 10px;
+  margin: 15px 0;
+  box-sizing: border-box;
+  border-radius: 30px;
+  font-size: 20px;
+  border-radius: 20px;
+  border: 3px solid black
+}
+
+.descdish{
+  width: 80%;
+  border-radius: 30px;
+  font-size: 20px;
+  border-radius: 20px;
+  border: 3px solid black
+}
+
+#slct{
+  width: 30%;
+  font-size: 30px;
+  border-radius: 20px;
+  border: 3px solid black;
+}
+
+#slect{
+  width: 30%;
+  font-size: 30px;
+  border-radius: 20px;
+  border: 3px solid black;
+}
+
+.nameofdish{
+  width: 30%;
+  font-size: 30px;
+  border-radius: 20px;
+  border: 3px solid black;
+}
+
+.createthebutton{
+  display: flex;
+  justify-content: end;
+}
+
+.bigboycontainer{
+  margin-left: 30px;
+}
+
+.forthedesc h2{
+  margin-top: 160px;
+} 
+
+.bigprofilecontainer{
+  background-color: antiquewhite;
+}
+
+.footer{
   width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0 0 0 .5em;
-  color: #000000;
-  cursor: pointer;
-}
-
-.select {
-  position: relative;
   display: block;
-  width: 20em;
-  height: 3em;
-  line-height: 3;
-  background: #ffffff;
-  overflow: hidden;
-  border-radius: 10px;
-  border: 1px solid black;
+  padding: 20px 30px;
+  background-color: #000000;
 }
 
-
-select::-ms-expand {
-  display: none;
+.wordlol a{
+  font-size: 20px;
+  display: block;
+  margin: 0 auto;
+  color: #fff
 }
 
-.select::after {
-  content: '\25BC';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0 1em;
-  background: #ffffff;
-  pointer-events: none;
+.le{
+    padding-bottom: 10px;
 }
 
-.select::after {
-  -webkit-transition: .25s all ease;
-  -o-transition: .25s all ease;
-  transition: .25s all ease;
+.lo{
+  padding-bottom: 10px;
+}
+
+.lel{
+  padding-bottom: 10px;
+} 
+
+@media screen and (max-width: 486px){ 
+  .uploadimg2 img{
+    width: 80%;
+  }
+
+  .profilecontainer{
+    margin-right: 5px;
+  }
+
+  #slct{
+    font-size: 15px
+  }
+  #slect{
+    font-size: 15px;
+  }
+
+  .nameofdish{
+    font-size: 15px;
+  }
 }
 
 @media screen and (max-width: 768px){

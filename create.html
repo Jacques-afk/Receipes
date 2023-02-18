@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="create.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
@@ -14,7 +14,11 @@
 </head>
 
 <body>
-	<video class="video-bg" autoplay loop muted src="images/loginpagebacks.mp4"></video>
+	<div class="loading">
+		<lottie-player id="create_animation" src="https://assets4.lottiefiles.com/packages/lf20_6ySOay.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop controls autoplay></lottie-player>	
+	</div>
+
+	<video class="video-bg" autoplay loop muted src="/Receipes/Createaccount/images/loginpagebacks.mp4"></video>
 
 	<div class="board">
 		<div class="login_details"> <!-- container to justify content and spread them evenly later-->
@@ -64,7 +68,6 @@
 
 
 
-
 						<div class="createpass">
 
 							<div class="forgot">
@@ -74,7 +77,7 @@
 							<p>/</p>
 
 							<div class="create">
-								<a href="../Createaccount/index.html">Create Account</a>
+								<a href="../Createaccount/index.html">Create Account</button>
 							</div>
 						</div>
 
@@ -87,7 +90,7 @@
 	</div>
 
 
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
 	<script src="/Receipes/jquery-3.6.3.js"></script>
 	<script src="/Receipes/script.js"></script>
 

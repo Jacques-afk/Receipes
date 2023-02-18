@@ -219,8 +219,6 @@ function getData(callback){
                 callback(dishname, User, LikeCheck, checkid)
             });    
         }
-
-
             else{
                 console.log('user found')
                 let dishname = response[id].NameDish           //if it finds, read value and put in variable
@@ -228,8 +226,6 @@ function getData(callback){
                 let LikeCheck = response[id].LikeCheck
                 callback(dishname, User, LikeCheck, checkid) 
             }
-
-
     });
 }
 
@@ -237,7 +233,7 @@ postObject(function(post){     //updating the text on the post
     console.log(post)
 
     let titleofpost = post.NameDish;
-    let authorofpost = post.authorofpost;
+    let authorofpost = post.Author;
     let dateofpost = post.Date_of_Post;
     let duration = post.Time;
     let descriptionofpost = post.Description;
@@ -245,7 +241,10 @@ postObject(function(post){     //updating the text on the post
     let numberfofdisllikes = post.Dislikes;
     let numberofcomments = post.Comments_No;
     let photodisplaying = post.Photo[0]
-
+    let ingredientsofpost = post.Ingredients;
+    let stepsofpost = post.Steps;
+    let cateyOMG = post.Category;
+    
     $('.imageofPost').html("<img class=imageofPost src=https://tutorial-9477.restdb.io/media/" + photodisplaying + ">")
     $('.namedafood').text(titleofpost);
     $('.Posted_Author').text('Posted by: ' + authorofpost);
@@ -255,7 +254,25 @@ postObject(function(post){     //updating the text on the post
     $('.likes').text(numberoflikes);
     $('.dislikes').text(numberfofdisllikes);
     $('.comments').text(numberofcomments);
+    $('.ingre').text(ingredientsofpost);
+    $('.steps').text(stepsofpost);
 
+    if (cateyOMG == 'Chinese'){
+        displaycatey = "Category: Chinese";
+    }
+        else if (cateryOMG == 'Italian'){
+            displaycatey = 'Category: Italian';
+        }
+
+        else if (cateryOMG == 'Western'){
+            displaycatey = 'Category: Western';
+        }
+
+        else if (cateryOMG == 'Vietnamese'){
+            displaycatey = 'Category: Vietnamese';
+        }
+
+    $('.categorydisplayed').text(displaycatey)
 })
 
 $('.likebutton').click(function(e){ 
@@ -263,7 +280,7 @@ $('.likebutton').click(function(e){
         let RecipeName = dishname;
         let Reader = User;
         let LikeStatus = LikeCheck;
-        let CheckObjectID = checkid
+        let CheckObjectID = checkid;
 
         var settings = {    //get posts details
         "async": true,

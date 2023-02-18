@@ -4,9 +4,8 @@
 const APIKEY = "63db64973bc6b255ed0c456e";                      
 let counter = 0;
 let category_Search = localStorage.getItem("Category");
-let manual_Search = localStorage.getItem("Dishs");
 const user = localStorage.getItem("Username");
-console.log(manual_Search);
+
 
 function pointsupdater(){
 
@@ -160,9 +159,42 @@ function quickrecipes(){
         let categoryforicon = post.Category
         console.log(photoSRC)
     
-        $("<div class=Dish><h2 class=DishName>" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1> <img class=JAJABINKS src=https://tutorial-9477.restdb.io/media/" + photoSRC + "><button class=Go" + counter + ">button</button> <img class=iconcategory src=/" + categoryforicon + ".png> </div>").insertAfter(".gobacklink");
+        $("<div class=Dish> <div class=Extra> <div class=imgcon > <img src=https://tutorial-9477.restdb.io/media/" + photoSRC + "> </div> <div class=Info> <h2 class=DishName" + counter + ">" + NameOfDish + "</h2> <h1 class=Author_Dish>" + Author + "</h1> <button class=Go" + counter + ">Check it Out</button> </div> <div class=iconcategory> <img src=/" + categoryforicon + ".png> </div> </div> </div>").insertAfter(".gobacklink");
         console.log("One dish done");
+
+        let colorstyle = '';
+
+        if (categoryforicon == 'Chinese'){
+            colorstyle = 'red';
+        }
+            else if (categoryforicon == 'Western'){
+                colorstyle = '#2E1503';
+            }
+            else if (categoryforicon == 'Vietnamese'){
+                colorstyle = 'orange';
+            }
+            else if (categoryforicon == 'Italian'){
+                colorstyle = 'green';
+            }
+
+            $('.DishName' + counter).css({
+                'font-size': '90px',
+                'color': colorstyle,
+            })
+    
+            $('.Go' + counter).css({
+                'margin-top': '110px',
+                'min-width': '300px',
+                'width': '100%',
+                'height': '50px',
+                'border': 'none',
+                'font-size': '20px',
+                'background-color': colorstyle,
+                'color': 'white',
+            })
+
         counter += 1;
+
         console.log(counter);
     
         $('button').click(function(o){
@@ -171,7 +203,7 @@ function quickrecipes(){
             let targetted_div = ($("." + classy).parent()[0]);   
             let targetted_dishname = targetted_div.children[0].innerText;
             let targetted_authorname = targetted_div.children[1].innerText;
-            localStorage.setItem("Dishname", targetted_dishname);
+            localStorage.setItem("Dishnamey", targetted_dishname);
             window.location.href = "recipedetails.html";              
         })  
     })
@@ -213,10 +245,42 @@ function favouriterecipes(){
         let NameOfDish = post.NameDish;
         let Author = post.Author;
         let photoSRC = post.Photo[0]
+        let categoryforicon = post.Category;
         console.log(photoSRC)
     
-        $("<div class=Dish><h2 class=DishName>" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1> <img class=JAJABINKS src=https://tutorial-9477.restdb.io/media/" + photoSRC + "><button class=Go" + counter + ">button</button></div>").insertAfter(".gobacklink");
+        $("<div class=Dish> <div class=Extra> <div class=imgcon > <img src=https://tutorial-9477.restdb.io/media/" + photoSRC + "> </div> <div class=Info> <h2 class=DishName" + counter + ">" + NameOfDish + "</h2> <h1 class=Author_Dish>" + Author + "</h1> <button class=Go" + counter + ">Check it Out</button> </div> <div class=iconcategory> <img src=/" + categoryforicon + ".png> </div> </div> </div>").insertAfter(".gobacklink");
         console.log("One dish done");
+        let colorstyle = '';
+
+        if (categoryforicon == 'Chinese'){
+            colorstyle = 'red';
+        }
+            else if (categoryforicon == 'Western'){
+                colorstyle = '#2E1503';
+            }
+            else if (categoryforicon == 'Vietnamese'){
+                colorstyle = 'orange';
+            }
+            else if (categoryforicon == 'Italian'){
+                colorstyle = 'green';
+            }
+
+            $('.DishName' + counter).css({
+                'font-size': '90px',
+                'color': colorstyle,
+            })
+    
+            $('.Go' + counter).css({
+                'margin-top': '110px',
+                'min-width': '300px',
+                'width': '100%',
+                'height': '50px',
+                'border': 'none',
+                'font-size': '20px',
+                'background-color': colorstyle,
+                'color': 'white',
+            })
+
         counter += 1;
         console.log(counter);
     
@@ -226,7 +290,7 @@ function favouriterecipes(){
             let targetted_div = ($("." + classy).parent()[0]);   
             let targetted_dishname = targetted_div.children[0].innerText;
             let targetted_authorname = targetted_div.children[1].innerText;
-            localStorage.setItem("Dishname", targetted_dishname);
+            localStorage.setItem("Dishnamey", targetted_dishname);
             window.location.href = "recipedetails.html";              
         })  
     })
@@ -271,8 +335,39 @@ function fusionrecipes(){
         let categoryforicon = post.Category
         console.log(photoSRC)
     
-        $("<div class=Dish><h2 class=DishName>" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1> <img class=JAJABINKS src=https://tutorial-9477.restdb.io/media/" + photoSRC + "><button class=Go" + counter + ">button</button> <img class=iconcategory src=/" + categoryforicon + ".png> </div>").insertAfter(".gobacklink");
+        $("<div class=Dish> <div class=Extra> <div class=imgcon > <img src=https://tutorial-9477.restdb.io/media/" + photoSRC + "> </div> <div class=Info> <h2 class=DishName" + counter + ">" + NameOfDish + "</h2> <h1 class=Author_Dish>" + Author + "</h1> <button class=Go" + counter + ">Check it Out</button> </div> <div class=iconcategory> <img src=/" + categoryforicon + ".png> </div> </div> </div>").insertAfter(".gobacklink");
         console.log("One dish done");
+        let colorstyle = '';
+
+        if (categoryforicon == 'Chinese'){
+            colorstyle = 'red';
+        }
+            else if (categoryforicon == 'Western'){
+                colorstyle = '#2E1503';
+            }
+            else if (categoryforicon == 'Vietnamese'){
+                colorstyle = 'orange';
+            }
+            else if (categoryforicon == 'Italian'){
+                colorstyle = 'green';
+            }
+
+            $('.DishName' + counter).css({
+                'font-size': '90px',
+                'color': colorstyle,
+            })
+    
+            $('.Go' + counter).css({
+                'margin-top': '110px',
+                'min-width': '300px',
+                'width': '100%',
+                'height': '50px',
+                'border': 'none',
+                'font-size': '20px',
+                'background-color': colorstyle,
+                'color': 'white',
+            })
+
         counter += 1;
         console.log(counter);
     
@@ -282,7 +377,7 @@ function fusionrecipes(){
             let targetted_div = ($("." + classy).parent()[0]);   
             let targetted_dishname = targetted_div.children[0].innerText;
             let targetted_authorname = targetted_div.children[1].innerText;
-            localStorage.setItem("Dishname", targetted_dishname);
+            localStorage.setItem("Dishnamey", targetted_dishname);
             window.location.href = "recipedetails.html";              
         })  
     })
@@ -345,7 +440,7 @@ function latestrecipes(){
         let categoryforicon = post.Category;
         console.log(photoSRC);
     
-        $("<div class=Dish><h2 class=DishName" + counter + ">" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1> <img class=JAJABINKS src=https://tutorial-9477.restdb.io/media/" + photoSRC + "><button class=Go" + counter + ">button</button> <img class=iconcategory src=/" + categoryforicon + ".png> </div>").insertAfter(".gobacklink");
+        $("<div class=Dish> <div class=Extra> <div class=imgcon > <img src=https://tutorial-9477.restdb.io/media/" + photoSRC + "> </div> <div class=Info> <h2 class=DishName" + counter + ">" + NameOfDish + "</h2> <h1 class=Author_Dish>" + Author + "</h1> <button class=Go" + counter + ">Check it Out</button> </div> <div class=iconcategory> <img src=/" + categoryforicon + ".png> </div> </div> </div>").insertAfter(".gobacklink");
         console.log("One dish done");
         
         let colorstyle = '';
@@ -363,16 +458,21 @@ function latestrecipes(){
                 colorstyle = 'green';
             }
 
-        $('.Dish').css({
-            'background-color': 'grey',
-        })
-        $('.DishName' + counter).css({
-            'color': colorstyle,
-        })
-        $('.Go' + counter).css({
-            'background-color': colorstyle,
-            'color': 'white',
-        })
+            $('.DishName' + counter).css({
+                'font-size': '90px',
+                'color': colorstyle,
+            })
+    
+            $('.Go' + counter).css({
+                'margin-top': '110px',
+                'min-width': '300px',
+                'width': '100%',
+                'height': '50px',
+                'border': 'none',
+                'font-size': '20px',
+                'background-color': colorstyle,
+                'color': 'white',
+            })
         counter += 1;
 
         $('button').click(function(o){
@@ -423,10 +523,41 @@ function chineserecipes(){
         let NameOfDish = post.NameDish;
         let Author = post.Author;
         let photoSRC = post.Photo[0]
+        let categoryforicon = post.Category;
         console.log(photoSRC)
     
-        $("<div class=Dish><h2 class=DishName>" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1> <img class=JAJABINKS src=https://tutorial-9477.restdb.io/media/" + photoSRC + "><button class=Go" + counter + ">button</button></div>").insertAfter(".gobacklink");
+        $("<div class=Dish> <div class=Extra> <div class=imgcon > <img src=https://tutorial-9477.restdb.io/media/" + photoSRC + "> </div> <div class=Info> <h2 class=DishName" + counter + ">" + NameOfDish + "</h2> <h1 class=Author_Dish>" + Author + "</h1> <button class=Go" + counter + ">Check it Out</button> </div> <div class=iconcategory> <img src=/" + categoryforicon + ".png> </div> </div> </div>").insertAfter(".gobacklink");
         console.log("One dish done");
+        let colorstyle = '';
+
+        if (categoryforicon == 'Chinese'){
+            colorstyle = 'red';
+        }
+            else if (categoryforicon == 'Western'){
+                colorstyle = '#2E1503';
+            }
+            else if (categoryforicon == 'Vietnamese'){
+                colorstyle = 'orange';
+            }
+            else if (categoryforicon == 'Italian'){
+                colorstyle = 'green';
+            }
+
+            $('.DishName' + counter).css({
+                'font-size': '90px',
+                'color': colorstyle,
+            })
+    
+            $('.Go' + counter).css({
+                'margin-top': '110px',
+                'min-width': '300px',
+                'width': '100%',
+                'height': '50px',
+                'border': 'none',
+                'font-size': '20px',
+                'background-color': colorstyle,
+                'color': 'white',
+            })
         counter += 1;
         console.log(counter);
     
@@ -436,7 +567,7 @@ function chineserecipes(){
             let targetted_div = ($("." + classy).parent()[0]);   
             let targetted_dishname = targetted_div.children[0].innerText;
             let targetted_authorname = targetted_div.children[1].innerText;
-            localStorage.setItem("Dishname", targetted_dishname);
+            localStorage.setItem("Dishnamey", targetted_dishname);
             window.location.href = "recipedetails.html";              
         })  
     })
@@ -479,10 +610,44 @@ function westernrecipes(){
         let NameOfDish = post.NameDish;
         let Author = post.Author;
         let photoSRC = post.Photo[0]
+        let categoryforicon = post.Category;
         console.log(photoSRC)
     
-        $("<div class=Dish><h2 class=DishName>" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1> <img class=JAJABINKS src=https://tutorial-9477.restdb.io/media/" + photoSRC + "><button class=Go" + counter + ">button</button></div>").insertAfter(".gobacklink");
+        
+        $("<div class=Dish> <div class=Extra> <div class=imgcon > <img src=https://tutorial-9477.restdb.io/media/" + photoSRC + "> </div> <div class=Info> <h2 class=DishName" + counter + ">" + NameOfDish + "</h2> <h1 class=Author_Dish>" + Author + "</h1> <button class=Go" + counter + ">Check it Out</button> </div> <div class=iconcategory> <img src=/" + categoryforicon + ".png> </div> </div> </div>").insertAfter(".gobacklink");
+
         console.log("One dish done");
+        let colorstyle = '';
+
+        if (categoryforicon == 'Chinese'){
+            colorstyle = 'red';
+        }
+            else if (categoryforicon == 'Western'){
+                colorstyle = '#2E1503';
+            }
+            else if (categoryforicon == 'Vietnamese'){
+                colorstyle = 'orange';
+            }
+            else if (categoryforicon == 'Italian'){
+                colorstyle = 'green';
+            }
+
+        $('.DishName' + counter).css({
+            'font-size': '90px',
+            'color': colorstyle,
+        })
+
+        $('.Go' + counter).css({
+            'margin-top': '110px',
+            'min-width': '300px',
+            'width': '100%',
+            'height': '50px',
+            'border': 'none',
+            'font-size': '20px',
+            'background-color': colorstyle,
+            'color': 'white',
+        })
+
         counter += 1;
         console.log(counter);
     
@@ -491,8 +656,9 @@ function westernrecipes(){
     
             let targetted_div = ($("." + classy).parent()[0]);   
             let targetted_dishname = targetted_div.children[0].innerText;
+            console.log(targetted_dishname);
             let targetted_authorname = targetted_div.children[1].innerText;
-            localStorage.setItem("Dishname", targetted_dishname);
+            localStorage.setItem("Dishnamey", targetted_dishname);
             window.location.href = "recipedetails.html";              
         })  
     })
@@ -535,12 +701,44 @@ function italianrecipes(){
         let NameOfDish = post.NameDish;
         let Author = post.Author;
         let photoSRC = post.Photo[0]
+        let categoryforicon = post.Category;
         console.log(photoSRC)
     
-        $("<div class=Dish><h2 class=DishName>" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1> <img class=JAJABINKS src=https://tutorial-9477.restdb.io/media/" + photoSRC + "><button class=Go" + counter + ">button</button></div>").insertAfter(".gobacklink");
+        $("<div class=Dish> <div class=Extra> <div class=imgcon > <img src=https://tutorial-9477.restdb.io/media/" + photoSRC + "> </div> <div class=Info> <h2 class=DishName" + counter + ">" + NameOfDish + "</h2> <h1 class=Author_Dish>" + Author + "</h1> <button class=Go" + counter + ">Check it Out</button> </div> <div class=iconcategory> <img src=/" + categoryforicon + ".png> </div> </div> </div>").insertAfter(".gobacklink");
         console.log("One dish done");
+        
+        let colorstyle = '';
+
+        if (categoryforicon == 'Chinese'){
+            colorstyle = 'red';
+        }
+            else if (categoryforicon == 'Western'){
+                colorstyle = '#2E1503';
+            }
+            else if (categoryforicon == 'Vietnamese'){
+                colorstyle = 'orange';
+            }
+            else if (categoryforicon == 'Italian'){
+                colorstyle = 'green';
+            }
+
+            $('.DishName' + counter).css({
+                'font-size': '90px',
+                'color': colorstyle,
+            })
+    
+            $('.Go' + counter).css({
+                'margin-top': '110px',
+                'min-width': '300px',
+                'width': '100%',
+                'height': '50px',
+                'border': 'none',
+                'font-size': '20px',
+                'background-color': colorstyle,
+                'color': 'white',
+            })
+            
         counter += 1;
-        console.log(counter);
     
         $('button').click(function(o){
             let classy = $(this)[0].className;
@@ -548,7 +746,7 @@ function italianrecipes(){
             let targetted_div = ($("." + classy).parent()[0]);   
             let targetted_dishname = targetted_div.children[0].innerText;
             let targetted_authorname = targetted_div.children[1].innerText;
-            localStorage.setItem("Dishname", targetted_dishname);
+            localStorage.setItem("Dishnamey", targetted_dishname);
             window.location.href = "recipedetails.html";              
         })  
     })
@@ -591,10 +789,41 @@ function vietnameserecipes(){
         let NameOfDish = post.NameDish;
         let Author = post.Author;
         let photoSRC = post.Photo[0]
+        let categoryforicon = post.Category;
         console.log(photoSRC)
     
-        $("<div class=Dish><h2 class=DishName>" + NameOfDish + "</h2><h1 class=Author_Dish>" + Author + "</h1> <img class=JAJABINKS src=https://tutorial-9477.restdb.io/media/" + photoSRC + "><button class=Go" + counter + ">button</button></div>").insertAfter(".gobacklink");
+        $("<div class=Dish> <div class=Extra> <div class=imgcon > <img src=https://tutorial-9477.restdb.io/media/" + photoSRC + "> </div> <div class=Info> <h2 class=DishName" + counter + ">" + NameOfDish + "</h2> <h1 class=Author_Dish>" + Author + "</h1> <button class=Go" + counter + ">Check it Out</button> </div> <div class=iconcategory> <img src=/" + categoryforicon + ".png> </div> </div> </div>").insertAfter(".gobacklink");
         console.log("One dish done");
+        let colorstyle = '';
+
+        if (categoryforicon == 'Chinese'){
+            colorstyle = 'red';
+        }
+            else if (categoryforicon == 'Western'){
+                colorstyle = '#2E1503';
+            }
+            else if (categoryforicon == 'Vietnamese'){
+                colorstyle = 'orange';
+            }
+            else if (categoryforicon == 'Italian'){
+                colorstyle = 'green';
+            }
+
+            $('.DishName' + counter).css({
+                'font-size': '90px',
+                'color': colorstyle,
+            })
+    
+            $('.Go' + counter).css({
+                'margin-top': '110px',
+                'min-width': '300px',
+                'width': '100%',
+                'height': '50px',
+                'border': 'none',
+                'font-size': '20px',
+                'background-color': colorstyle,
+                'color': 'white',
+            })
         counter += 1;
         console.log(counter);
     
@@ -604,7 +833,7 @@ function vietnameserecipes(){
             let targetted_div = ($("." + classy).parent()[0]);   
             let targetted_dishname = targetted_div.children[0].innerText;
             let targetted_authorname = targetted_div.children[1].innerText;
-            localStorage.setItem("Dishname", targetted_dishname);
+            localStorage.setItem("Dishnamey", targetted_dishname);
             window.location.href = "recipedetails.html";              
         })  
     })
@@ -643,16 +872,47 @@ function searchbar(){
                         let NameofDishT = response[i].NameDish;
                         let AuthorT = response[i].Author; 
                         let photoSRCT = response[i].Photo[0]
+                        let categoryforicon = response[i].Category;
                 
-                        callback(NameofDishT, AuthorT, photoSRCT)
+                        callback(NameofDishT, AuthorT, photoSRCT, categoryforicon)
                     }
                 }
             });
         }
         
-        getting(function(NameDishT, AuthorT, photoSRCT){
-            $("<div class=Dish><h2 class=DishName>" + NameDishT + "</h2><h1 class=Author_Dish>" + AuthorT + "</h1> <img class=JAJABINKS src=https://tutorial-9477.restdb.io/media/" + photoSRCT + "><button class=Go" + counter + ">button</button></div>").insertAfter(".gobacklink");
+        getting(function(NameDishT, AuthorT, photoSRCT, categoryforicon){
+            $("<div class=Dish> <div class=Extra> <div class=imgcon > <img src=https://tutorial-9477.restdb.io/media/" + photoSRCT + "> </div> <div class=Info> <h2 class=DishName" + counter + ">" + NameDishT + "</h2> <h1 class=Author_Dish>" + AuthorT + "</h1> <button class=Go" + counter + ">Check it Out</button> </div> <div class=iconcategory> <img src=/" + categoryforicon + ".png> </div> </div> </div>").insertAfter(".gobacklink");
             console.log("One dish done");
+            let colorstyle = '';
+
+            if (categoryforicon == 'Chinese'){
+                colorstyle = 'red';
+            }
+                else if (categoryforicon == 'Western'){
+                    colorstyle = '#2E1503';
+                }
+                else if (categoryforicon == 'Vietnamese'){
+                    colorstyle = 'orange';
+                }
+                else if (categoryforicon == 'Italian'){
+                    colorstyle = 'green';
+                }
+
+                $('.DishName' + counter).css({
+                    'font-size': '90px',
+                    'color': colorstyle,
+                })
+        
+                $('.Go' + counter).css({
+                    'margin-top': '110px',
+                    'min-width': '300px',
+                    'width': '100%',
+                    'height': '50px',
+                    'border': 'none',
+                    'font-size': '20px',
+                    'background-color': colorstyle,
+                    'color': 'white',
+                })
             counter += 1;
             console.log(counter);
         
@@ -665,6 +925,7 @@ function searchbar(){
                 localStorage.setItem("Dishnamey", targetted_dishname);
                 window.location.href = "recipedetails.html";              
             })
+            localStorage.setItem("Dishs", '');
         })
 
 
@@ -674,14 +935,16 @@ function searchbar(){
     }
 };
 
+let manual_Search = localStorage.getItem("Dishs");
 
 
-
-
-if (category_Search == "quick"){
-    console.log('calling quick')
-    quickrecipes();
+if (manual_Search.length >= 1){
+    searchbar();
 }
+    else if (category_Search == "quick"){
+        console.log('calling quick')
+        quickrecipes();
+    }
     else if (category_Search == "favourite"){
         console.log('calling fav')
         favouriterecipes();
@@ -710,7 +973,4 @@ if (category_Search == "quick"){
         console.log('ital')
         italianrecipes();
     }
-    else if (manual_Search.length >= 1){
-        console.log('searchbr')
-        searchbar();
-    }
+

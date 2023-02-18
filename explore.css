@@ -68,9 +68,9 @@ li{
   color: #000000;
   }
   
-.title {
-  font-size: 32px;
-}
+  .title img{
+    width: 100%;
+  }
 
 .menu .bar{
   display: block;
@@ -144,6 +144,9 @@ li{
       margin-left: 22%;
     }
 
+    .stuffies button{
+      font-family: 'Lato', sans-serif;
+    }
 
   .chineseman{
     background: #d82020;
@@ -227,7 +230,7 @@ li{
   
   .seatch{
     position: absolute;
-    top: 420px;
+    top: 465px;
     right: 220px;
     width: 50px;
     cursor: pointer;
@@ -242,7 +245,7 @@ li{
   @media screen and (max-width: 768px){
     .seatch{
       position: absolute;
-      top: 410px;
+      top: 455px;
       right: 180px;
       width: 50px;
       cursor: pointer;
@@ -366,7 +369,7 @@ li{
 
     .seatch{
       position: absolute;
-      top: 363px;
+      top: 405px;
       right: 140px;
       width: 50px;
       cursor: pointer;
@@ -448,3 +451,4 @@ li{
       background-color: #ffffff;
     }
   }
+

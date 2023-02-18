@@ -91,7 +91,7 @@ li{
 
 
   .activate{
-    background-image: url(images/salmon.jpg);
+    background-image: url(/dddd.jpg);
     height: 550px;
   }
 
@@ -118,7 +118,7 @@ li{
   }
 
   .container {
-    background-image: url(images/slicing.jpg);
+    background-image: url(/4background.jpg);
     display: flex;
     width: 100%;
     flex-wrap: wrap;
@@ -236,7 +236,7 @@ li{
   
   @media screen and (min-width: 1025px){
     .container {
-      background-image: url(images/slicing.jpg);
+      background-image: url(/4background.jpg);
       display: flex;
       width: 100%;
       background-color: #fff;
@@ -443,7 +443,7 @@ li{
   
 
     .activate{
-      background-image: url(images/salmon.jpg);
+      background-image: url(/dddd.jpg);
       height: 650px;
     }
 
@@ -491,7 +491,7 @@ li{
     color: rgb(207, 102, 32);
   }
   .container {
-    background-image: url(images/slicing.jpg);
+    background-image: url(/dddd.jpg);
     display: flex;
     width: 100%;
     background-color: #fff;

@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage</title>
+  <title>Post</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Montserrat:ital,wght@1,500&family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="posting.css">
+  <link rel="stylesheet" type="text/css" href="css/example-styles.css">
+  <link rel="stylesheet" type="text/css" href="css/demo-styles.css">
+  <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript" src="js/jquery.multi-select.js"></script>
 </head>
 <body>
     <h2 class="toptext">
@@ -12,87 +19,96 @@
     </h2>
     <div class="navcontain">
       <nav class="navbar">
-        <h1 class="title">Receipes</h1>
+        <h1 class="title"><img src="/Group 249.png"></h1>
         <div class="menu" id="mobilemenu">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
         </div>
           <ul class="nav-links">
-            <li><a href="/Receipes/homepage.html" class="navinside">Homepage</a></li>
-            <li><a href="/Receipes/explore.html" class="navinside">Explore</a></li>
-            <li><a href="/Receipes/posting.html" class="navinside">Post</a></li>
-            <li><a href="/" class="navinside">Account</a></li>
-            <li><a href="/Receipes/shoppage.html" class="navinside">Shop</a></li>
+                <li><a href="/Receipes/homepage.html" class="navinside">Homepage</a></li>
+                <li><a href="/Receipes/explore.html" class="navinside">Explore</a></li>
+                <li><a href="/Receipes/posting.html" class="navinside">Post</a></li>
+                <li><a href="/Receipes/account.html" class="navinside">Account</a></li>
+                <li><a href="/Receipes/shoppage.html" class="navinside">Shop</a></li>
           </ul>
-          <img src="/recicred.png">
+          <img src="images/recicred.png">
           <p class="currency">0</p>
         </div>
       </nav>
     </div>
     
-    <div class="profilecontainer">
-      <div class="uploadimg">
-        <img src="images/salmon.jpg">
-        <input type="file" id="imguploadbtn" accept="image/*" onchange="imagepreview(event)">
-        <label for="imguploadbtn">Set Photo</label>
+    <div class="bigprofilecontainer">
+        <div class="photocontainer">
+          <h2>Photo of Dish</h2>
+          <div class="uploadimg2">
+            <img src="images/salmon.jpg">
+          </div>
+          <a href="#">Choose photo</a>
+        </div>
+
+      <div class="iambig">
+        <div class="bigboycontainer">
+            <h2 class="dishname">Name of Dish</h2>
+            <div class="reply">
+              <input class="nameofdish" type="text" required>
+            </div>
+            
+            <div class="dropdown1">
+              <h2>Time to cook Dish</h2>
+              <div class="select">
+                  <select name="slct" id="slct">
+                      <option></option>
+                      <option>5-10 Minutes</option>
+                      <option>10-20 Minutes</option>
+                      <option>20-40 Minutes</option>
+                      <option>40-60 Minutes</option>
+                  </select>
+              </div>
+            </div>
+
+            <div class="dropdown2">
+              <h2>Category of Dish</h2>
+              <div class="select2">
+                  <select name="slect" id="slect">
+                      <option></option>
+                      <option>Italian</option>
+                      <option>Chinese</option>
+                      <option>Vietnamese</option>
+                      <option>Western</option>
+                  </select>
+              </div>
+            </div>
+
+            <div class="forthedesc">
+              <h2>Description of Dish</h2>
+              <textarea class="descdish" rows = "7" type="text" required></textarea>
+            </div>
+
+            <div class="ingandstep">
+              <h2>Ingredients for Dish</h2>
+              <textarea class="ingredientdish" rows = "10" type="text" required></textarea>
+
+              <h2>Steps for Dish</h2>
+              <textarea class="stepdish" rows = "10" type="text" required></textarea>
+            </div>
+        </div>
+      </div>
+
+      <div class="createthebutton">
+        <button id="createpost_Bt" type="button">Create Post</button>
       </div>
     </div>
-    
-    <div class="bigboycontainer">
-        <h2 class="dishname">Name of Dish</h1>
-        <div class="reply">
-        <input class="create_Dish" type="text" required>
-        </div>
-        
-        <div class="dropdown1">
-          <h2>Time to cook Dish</h2>
-          <div class="select">
-              <select name="slct" id="slct">
-                  <option></option>
-                  <option value="5-10">5-10 Minutes</option>
-                  <option value="10-20">10-20 Minutes</option>
-                  <option value="20-40">20-40 Minutes</option>
-                  <option value="40-60">40-60 Minutes</option>
-              </select>
-          </div>
-        </div>
 
-        <div class="dropdown2">
-          <h2>Category of Dish</h2>
-          <div class="select2">
-              <select name="category" id="category">
-                  <option value="Italian">Italian</option>
-                  <option value="Chinese">Chinese</option>
-                  <option value="Vietnamese">Vietnamese</option>
-                  <option value="Western">Western</option>
-              </select>
-          </div>
-        </div>
-
-        <div class="forthedesc">
-          <h2>Description of Dish</h2>
-          <textarea class="descdish" rows = "10" type="text" placeholder="Message" required></textarea>
-        </div>
-
-        <div class="ingandstep">
-          <h2>Ingredients for Dish</h2>
-          <textarea class="ingredientdish" rows = "15" type="text" required></textarea>
-
-          <h2>Steps for Dish</h2>
-          <textarea class="ingredientdish" rows = "15" type="text" required></textarea>
-        </div>
-
-        <div class="createthebutton">
-            <button type="button" id="createpost_Bt">Create Post</button>
-        </div>
-
+    <div class="footer">
+      <div class="wordlol">
+        <a href="#" class="le">About Us</a>
+        <a href="#" class="lo">Discussions and Help</a>
+        <a href="#" class="lel">Account Settings</a>
+        <a href="#" class="lelo">Rules and regulations</a>
+      </div>
     </div>
 
-    <script src="/Receipes/jquery-3.6.3.js"></script>
-    <script src="/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="/jquery.multi-select.js"></script>
-    <script src="/Receipes/CreatePost.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

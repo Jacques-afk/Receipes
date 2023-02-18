@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage</title>
+  <title>Search Results</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Montserrat:ital,wght@1,500&family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="searchresults.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -13,45 +16,45 @@
     </h2>
     <div class="navcontain">
       <nav class="navbar">
-        <h1 class="title">Receipes</h1>
+        <h1 class="title"><img src="/Group 249.png"></h1>
         <div class="menu" id="mobilemenu">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
         </div>
           <ul class="nav-links">
-                <li><a href="/" class="navinside">Homepage</a></li>
-                <li><a href="/" class="navinside">Explore</a></li>
-                <li><a href="/" class="navinside">Post</a></li>
-                <li><a href="/" class="navinside">Account</a></li>
-                <li><a href="/" class="navinside">Shop</a></li>
+                <li><a href="/Receipes/homepage.html" class="navinside">Homepage</a></li>
+                <li><a href="/Receipes/explore.html" class="navinside">Explore</a></li>
+                <li><a href="/Receipes/posting.html" class="navinside">Post</a></li>
+                <li><a href="/Receipes/account.html" class="navinside">Account</a></li>
+                <li><a href="/Receipes/shoppage.html" class="navinside">Shop</a></li>
           </ul>
-          <img src="images/recicred.png">
+          <img src="/recicred.png">
           <p class="currency">0</p>
         </div>
       </nav>
     </div>
+    <div class="backgroundimgyk">
+      <form class="searchthingy">
+          <input type="text" class="searchh" placeholder="Search">
+          <button class="seatch">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+      </form>
 
-    <form class="searchthingy">
-        <input type="text" class="searchh" placeholder="Search">
-        <button class="seatch">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-    </form>
+      <div class="goingbackk">
+        <a href="/Receipes/explore.html" class="gobacklink">Go Back?</a>
+      </div>
 
-    <div class="goingbackk">
-      <a href="#" class="gobacklink">Go Back?</a>
-    </div>
-
-    <div class="footer">
-      <div class="wordlol">
-        <a href="#" class="le">About Us</a>
-        <a href="#" class="lo">Discussions and Help</a>
-        <a href="#" class="lel">Account Settings</a>
-        <a href="#" class="lelo">Rules and regulations</a>
+      <div class="footer">
+        <div class="wordlol">
+          <a href="#" class="le">About Us</a>
+          <a href="#" class="lo">Discussions and Help</a>
+          <a href="#" class="lel">Account Settings</a>
+          <a href="#" class="lelo">Rules and regulations</a>
+        </div>
       </div>
     </div>
-    
     <script src="/Receipes/jquery-3.6.3.js"></script>
     <script src="/Receipes/postresults.js"></script>
     <script src="app.js"></script>

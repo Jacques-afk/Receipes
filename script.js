@@ -1,7 +1,14 @@
 
 $(document).ready(function (){
-    const APIKEY = "63db64973bc6b255ed0c456e";              
+    const APIKEY = "63db64973bc6b255ed0c456e";         
+    
+    let today = new Date();
 
+    let month = today.getMonth() + 1;
+    let year = today.getFullYear();
+    let date = today.getDay() + 12;
+
+    let current_date = `${date}/${month}/${year}`
 
     $('#login_Btn').click(function(e){    //java for log in page
         e.preventDefault();
@@ -61,7 +68,9 @@ $(document).ready(function (){
           "Username": create_Username,
           "Password":create_Password,
           "Email": create_Email,
-          "Points": 0
+          "Points": 0,
+          "dateJoined": current_date
+
       };
 
       let cart = {
@@ -89,16 +98,34 @@ $(document).ready(function (){
               "data": JSON.stringify(particulars)
           }
 
-          
+          $.ajax(settings).done(function (response) {
+            
+            var shop = {
+              "async": true,
+              "crossDomain": true,
+              "url": "https://tutorial-9477.restdb.io/rest/shopping",
+              "method": "POST",
+              "headers": {
+                "content-type": "application/json",
+                "x-apikey": APIKEY,
+                "cache-control": "no-cache"
+              },
+              "processData": false,
+              "data": JSON.stringify(cart)
+            }
+  
+            $.ajax(shop).done(function (response) {
+              localStorage.setItem('Username', create_Username);
+              window.location.href = "homepage.html";
+            });
 
+          });      
+          // $("#jesus").click(function(r){
+          //   r.preventDefault()
+          //   $("#create_animation").get(0).play();
+          // })
 
-
-
-
-      }
-        else{
-          alert("Passwords do not match!");
-        }
+      } // if they succesfully created an acc
     })
     
     
