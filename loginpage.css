@@ -90,10 +90,8 @@ input{
 
 #login_Btn{
   height: 9vh;
+  width: 30%;
   padding: 7%;
+  background: none;
+  border: none;
 }
-
-
-/* @media screen and (max-width: 754px){
-  
-}  */
