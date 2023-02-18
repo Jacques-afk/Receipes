@@ -2,14 +2,16 @@
 $(document).ready(function (){
     const APIKEY = "63db64973bc6b255ed0c456e";              
 
+
     $('#login_Btn').click(function(e){    //java for log in page
         e.preventDefault();
         //console.log("hello")
         let login_Username = $("#login_Username").val();
         let login_Password = $('#login_Password').val();
+        
         let particulars = {
             "Username": login_Username,
-            "Password":login_Password,       
+            "Password": login_Password,       
         };
 
       let settings = {                                 
@@ -31,22 +33,16 @@ $(document).ready(function (){
           let check_user = response[i].Username
           let check_pass = response[i].Password
    
-
-
           if (check_user == login_Username){
-            console.log("user identified")
+            console.log("user identified"); 
             if (check_pass == login_Password){     
-              localStorage.setItem('Username', login_Username)
-              localStorage.setItem('Password', login_Password)
-              window.location.href = "homepage.html" 
+              localStorage.setItem('Username', login_Username);
+              window.location.href = "homepage.html"; 
             }
               else{
-                console.log("Wrong password :(")
+                alert("User not Found");
               }
           } 
-            else{
-              console.log("user not indentified")
-            } 
         }
 
       })                  
@@ -68,6 +64,13 @@ $(document).ready(function (){
           "Points": 0
       };
 
+      let cart = {
+        "User": create_Username,
+        "Cup": 0,
+        "Plate": 0,
+        "Cooker": 0,
+        "Blender": 0
+      }
 
       if (create_Password == create_ConfirmPassword){
           console.log("passwords match <3")
@@ -85,10 +88,19 @@ $(document).ready(function (){
               "processData": false,
               "data": JSON.stringify(particulars)
           }
+
+          
+
+
+
+
+
       }
+        else{
+          alert("Passwords do not match!");
+        }
     })
-
-
+    
     
 
 })// end api function
